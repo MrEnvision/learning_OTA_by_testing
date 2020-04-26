@@ -1,13 +1,381 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09576ac5-b64e-4b07-9ddd-b5edc877689b" name="Default Changelist" comment="" />
+    <list default="true" id="09576ac5-b64e-4b07-9ddd-b5edc877689b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Envision.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统0.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统10.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统11" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统11.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统12" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统12.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统13" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统13.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统14" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统14.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统15" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统15.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统16" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统16.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统17" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统17.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统18" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统18.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统19" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统19.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统2.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统20" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统20.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统21" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统21.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统22" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统22.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统23" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统23.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统24" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统24.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统25" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统25.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统26" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统26.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统27" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统27.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统28" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统28.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统29" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统29.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统3.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统30" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统30.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统31" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统31.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统32" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统32.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统33" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统33.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统34" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统34.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统35" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统35.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统36" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统36.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统37" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统37.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统38" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统38.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统39" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统39.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统4.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统40" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统40.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统41" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统41.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统42" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统42.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统43" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统43.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统44" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统44.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统45" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统45.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统46" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统46.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统47" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统47.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统48" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统48.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统49" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统49.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统5.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统6.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统7.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统8.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/猜想系统9.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_1_10_10/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_1_10_10/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_1_10_10/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_1_10_10/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_2_20_10/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_2_20_10/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_2_20_10/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_2_20_10/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_3_30_10/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_3_30_10/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_3_30_10/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_3_30_10/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_4_40_10/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_4_40_10/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_4_40_10/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_4_40_10/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_5_50_10/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_5_50_10/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_5_50_10/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_1/5_5_50_10/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/1_3_6_10/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/1_3_6_10/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/1_3_6_10/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/1_3_6_10/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/2_3_12_10/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/2_3_12_10/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/2_3_12_10/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/2_3_12_10/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/3_3_18_10/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/3_3_18_10/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/3_3_18_10/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/3_3_18_10/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/4_3_24_10/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/4_3_24_10/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/4_3_24_10/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/4_3_24_10/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/5_3_30_10/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/5_3_30_10/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/5_3_30_10/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_2/5_3_30_10/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_10/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_10/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_10/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_10/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_100/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_100/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_100/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_100/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_25/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_25/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_25/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_25/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_5/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_5/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_5/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_5/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_50/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_50/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_50/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_3/5_2_20_50/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_10_5_2-1/4_10_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_10_5_2-1/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_10_5_2-1/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_10_5_2-1/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_10_5_2-2/4_10_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_10_5_2-2/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_10_5_2-2/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_10_5_2-2/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_10_5_2-3/4_10_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_10_5_2-3/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_10_5_2-3/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_10_5_2-3/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_12_5_2-1/4_12_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_12_5_2-1/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_12_5_2-1/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_12_5_2-1/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_2_5_2-1/4_2_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_2_5_2-1/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_2_5_2-1/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_2_5_2-1/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_2_5_2-2/4_2_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_2_5_2-2/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_2_5_2-2/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_2_5_2-2/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_2_5_2-3/4_2_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_2_5_2-3/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_2_5_2-3/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_2_5_2-3/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_4_5_2-1/4_4_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_4_5_2-1/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_4_5_2-1/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_4_5_2-1/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_4_5_2-2/4_4_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_4_5_2-2/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_4_5_2-2/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_4_5_2-2/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_6_5_2-1/4_6_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_6_5_2-1/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_6_5_2-1/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_6_5_2-1/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_6_5_2-2/4_6_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_6_5_2-2/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_6_5_2-2/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_6_5_2-2/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_6_5_2-3/4_6_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_6_5_2-3/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_6_5_2-3/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_6_5_2-3/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_8_5_2-1/4_8_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_8_5_2-1/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_8_5_2-1/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_8_5_2-1/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_8_5_2-2/4_8_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_8_5_2-2/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_8_5_2-2/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_action/4_8_5_2-2/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/11_2_5_2-1/11_2_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/11_2_5_2-1/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/11_2_5_2-1/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/11_2_5_2-1/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/11_2_5_2-2/11_2_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/11_2_5_2-2/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/11_2_5_2-2/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/11_2_5_2-2/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/14_2_5_2-1/14_2_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/14_2_5_2-1/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/14_2_5_2-1/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/14_2_5_2-1/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/14_2_5_2-2/14_2_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/14_2_5_2-2/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/14_2_5_2-2/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/14_2_5_2-2/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/17_2_5_2-1/17_2_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/17_2_5_2-1/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/17_2_5_2-1/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/17_2_5_2-1/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/20_2_5_2-1/20_2_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/20_2_5_2-1/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/20_2_5_2-1/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/20_2_5_2-1/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/2_2_5_2-1/2_2_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/2_2_5_2-1/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/2_2_5_2-1/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/2_2_5_2-1/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/5_2_5_2-1/5_2_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/5_2_5_2-1/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/5_2_5_2-1/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/5_2_5_2-1/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/8_2_5_2-1/8_2_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/8_2_5_2-1/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/8_2_5_2-1/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/experiment_state/8_2_5_2-1/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/generator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comparator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataStatistics.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hypothesis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learner.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/makePic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obsTable.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/system.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/teacher.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/TCP/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/TCP/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/TCP/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/TCP/results/猜想系统" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/TCP/results/猜想系统.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/TCP/results/目标系统" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/TCP/results/目标系统.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/dataStatistics.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_1_2/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_1_2/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_1_2/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_1_2/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_2_4/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_2_4/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_2_4/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_2_4/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_3_6/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_3_6/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_3_6/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_3_6/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_4_8/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_4_8/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_4_8/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_4_8/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_5_10/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_5_10/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_5_10/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_5_10/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_5_10/results/目标系统" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_5_10/results/目标系统.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_6_12/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_6_12/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_6_12/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_6_12/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_7_14/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_7_14/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_7_14/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_7_14/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_8_16/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_8_16/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_8_16/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_8_16/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_9_18/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_9_18/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_9_18/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_9_18/result_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_9_18/results/目标系统" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_9_18/results/目标系统.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/Automata/generator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/comparator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/hypothesis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/learner.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/makePic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/obsTable.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/system.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/teacher.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/tester.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/timeInterval.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_0版本/timedWord.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_0.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_2.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_3.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_4.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/目标系统" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/目标系统.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/comparator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/error.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/hypothesis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/learner.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/makePic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/obsTable.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/system.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/teacher.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/tester.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/timeInterval.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/1_1版本/timedWord.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tester.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/timeInterval.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/timedWord.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1b4uJ04apGDuvLUmidkhzR8eJW3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="false" />
@@ -16,9 +384,16 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Experiments" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Experiments" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -32,6 +407,7 @@
       <updated>1587903610771</updated>
       <workItem from="1587903616494" duration="31000" />
       <workItem from="1587903653834" duration="47000" />
+      <workItem from="1587904954843" duration="881000" />
     </task>
     <servers />
   </component>
@@ -39,9 +415,21 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="463" y="308" key="Github.ShareDialog" timestamp="1587904975218">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="463" y="308" key="Github.ShareDialog/0.0.1280.800@0.0.1280.800" timestamp="1587904975218" />
+    <state x="419" y="30" key="Github.UntrackedFilesDialog" timestamp="1587904984396">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="419" y="30" key="Github.UntrackedFilesDialog/0.0.1280.800@0.0.1280.800" timestamp="1587904984396" />
     <state x="141" y="39" key="SettingsEditor" timestamp="1587903688569">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="141" y="39" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1587903688569" />
+    <state x="288" y="180" key="git4idea.merge.GitPullDialog" timestamp="1587905107073">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="288" y="180" key="git4idea.merge.GitPullDialog/0.0.1280.800@0.0.1280.800" timestamp="1587905107073" />
   </component>
 </project>
