@@ -4,12 +4,13 @@ import time
 from learner import learnOTA
 from system import buildSystem
 from makePic import makeOTA, makeLearnedOTA
+from error import getError
 
 
 def main():
     ### 构建目标系统
     targetSys = buildSystem(modelFile)
-    makeOTA(targetSys, '.', '/results/目标系统')
+    makeOTA(targetSys, '.', '/results/targetSys')
     # targetSys = buildSystem(filePath + "/example.json")
     # makeOTA(targetSys, filePath, '/results/目标系统')
 
@@ -27,6 +28,7 @@ def main():
     startLearning = time.time()
     # learner
     learnedSys, mqNum, eqNum, testNum, metric = learnOTA(targetSys, inputs, upperGuard, epsilon, delta, stateNum)
+    passingRate = getError(learnedSys, targetSys, upperGuard, stateNum)
     endLearning = time.time()
 
     ### 学习结果
@@ -36,13 +38,14 @@ def main():
     else:
         print("---------------------------------------------------")
         print("Succeed! The learned OTA is as follows.")
-        makeLearnedOTA(learnedSys, '.', '/results/猜想系统')
+        makeLearnedOTA(learnedSys, '.', '/results/learnedSys')
         print("---------------------------------------------------")
-        print("学习总时间: " + str(endLearning - startLearning))
-        print("成员查询数量: " + str(mqNum))
-        print("等价查询数量: " + str(eqNum))
-        print("测试数量: " + str(testNum))
-        print("当前距离: " + str(metric))
+        print("learning time: " + str(endLearning - startLearning))
+        print("mqNum: " + str(mqNum))
+        print("eqNum: " + str(eqNum))
+        print("testNum: " + str(testNum))
+        # print("当前距离: " + str(metric))
+        print('accuracy', str(1 - epsilon), ' passingRate', str(passingRate))
         resultObj = {
             "Data": "Success",
             "time": endLearning - startLearning,
@@ -67,7 +70,7 @@ if __name__ == '__main__':
         result = main()
         data.update({i: result})
     json_str = json.dumps(data, indent=2)
-    with open("results/result.json", 'w') as json_file:
+    with open("results/result_1.json", 'w') as json_file:
         json_file.write(json_str)
 
     # # 目标模型
