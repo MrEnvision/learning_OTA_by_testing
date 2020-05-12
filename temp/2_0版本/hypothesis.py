@@ -112,9 +112,13 @@ def structDiscreteOTA(table, inputs):
         needNewTran = True
         for tran in trans:
             if source == tran.source and input == tran.input and target == tran.target and isReset == tran.isReset:
-                if timeList[0] in tran.timeList:
+                if timeList[0] not in tran.timeList:
+                    pass
+                    # tran.timeList.append(timeList[0])
+                    # needNewTran = False
+                else:
                     needNewTran = False
-                    break
+                break
         if needNewTran:
             tempTran = DiscreteOTATran(transNum, source, input, timeList, isReset, target)
             trans.append(tempTran)

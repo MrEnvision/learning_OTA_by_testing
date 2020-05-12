@@ -1,6 +1,6 @@
-import math
 from teacher import TQs
 from timedWord import TimedWord, DRTW_to_LRTW, LRTW_to_LTW, ResetTimedWord
+import math
 
 
 class ObsTable(object):

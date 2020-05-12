@@ -2,7 +2,7 @@ import copy
 import obsTable
 from teacher import EQs
 from hypothesis import structDiscreteOTA, structHypothesisOTA
-from comparator import buildCanonicalOTA
+from comparator import hpyCompare, buildCanonicalOTA, computeMetric
 import equiv.equiv_wrapper as equiv_wrapper
 
 
@@ -24,7 +24,7 @@ def learnOTA(targetSys, inputs, upperGuard, epsilon, delta, stateNum):
     equivalent = False
     stableHpy = None  # 学习所得系统
     tNum = 1  # 观察表数
-    # metric = 1  # 初始距离为1
+    metric = 1  # 初始距离为1
 
     while not equivalent:
         # 属性验证
@@ -63,7 +63,7 @@ def learnOTA(targetSys, inputs, upperGuard, epsilon, delta, stateNum):
         # eqNum = eqNum + 1
 
         # 比较器版本
-        flag, ctx, mqNum = equiv_wrapper.hpyCompare(stableHpy, hypothesisOTA, upperGuard, targetSys, targetFullSys, mqNum)
+        flag, ctx, mqNum, metric = equiv_wrapper.hpyCompare(stableHpy, hypothesisOTA, upperGuard, targetSys, targetFullSys, mqNum, metric)
         if flag:
             ### 等价测试
             equivalent, ctx, testNum = EQs(hypothesisOTA, upperGuard, epsilon, delta, stateNum, targetSys, eqNum, testNum)
@@ -82,5 +82,5 @@ def learnOTA(targetSys, inputs, upperGuard, epsilon, delta, stateNum):
             tNum = tNum + 1
             print("***************** New-Table" + str(tNum) + " is as follow *******************")
             table.show()
-    # metric = computeMetric(stableHpy, targetFullSys)
-    return stableHpy, mqNum, eqNum, testNum
+    metric = computeMetric(stableHpy, targetFullSys)
+    return stableHpy, mqNum, eqNum, testNum, metric

@@ -2,15 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09576ac5-b64e-4b07-9ddd-b5edc877689b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/error.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/2_0版本/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/2_0版本/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/2_0版本/comparator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/2_0版本/dataStatistics.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/2_0版本/equiv/equiv_wrapper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/2_0版本/equiv/equivalence.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/2_0版本/equiv/interval.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/2_0版本/equiv/ota.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/2_0版本/equiv/otatable.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/2_0版本/hypothesis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/2_0版本/learner.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/2_0版本/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/2_0版本/makePic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/2_0版本/obsTable.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/2_0版本/system.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/2_0版本/teacher.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/2_0版本/tester.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/2_0版本/timeInterval.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/2_0版本/timedWord.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Envision.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Envision.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Automata/example3.json" beforeDir="false" afterPath="$PROJECT_DIR$/Automata/example3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Automata/example3_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/Automata/example3_1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Automata/experiment_state/2_2_5_2-1/result_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/Automata/experiment_state/2_2_5_2-1/result_1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Automata/experiment_state/5_2_5_2-1/precondition.json" beforeDir="false" afterPath="$PROJECT_DIR$/Automata/experiment_state/5_2_5_2-1/precondition.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Automata/experiment_state/5_2_5_2-1/result_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/Automata/experiment_state/5_2_5_2-1/result_1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comparator.py" beforeDir="false" afterPath="$PROJECT_DIR$/comparator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equiv/equiv_wrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/equiv/equiv_wrapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equiv/equivalence.py" beforeDir="false" afterPath="$PROJECT_DIR$/equiv/equivalence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equiv/interval.py" beforeDir="false" afterPath="$PROJECT_DIR$/equiv/interval.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/error.py" beforeDir="false" afterPath="$PROJECT_DIR$/temp/2_0版本/error.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hypothesis.py" beforeDir="false" afterPath="$PROJECT_DIR$/hypothesis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learner.py" beforeDir="false" afterPath="$PROJECT_DIR$/learner.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obsTable.py" beforeDir="false" afterPath="$PROJECT_DIR$/obsTable.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teacher.py" beforeDir="false" afterPath="$PROJECT_DIR$/teacher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tester.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,13 +71,73 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/temp/2_0版本" />
+      <recent name="$PROJECT_DIR$/Automata/temp" />
       <recent name="$PROJECT_DIR$/Experiments" />
     </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="demo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PACLearning_OTA_by_testing" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PACLearning_OTA_by_testing" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.demo" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -54,6 +155,7 @@
       <workItem from="1589085050584" duration="360000" />
       <workItem from="1589085484819" duration="21000" />
       <workItem from="1589090947950" duration="350000" />
+      <workItem from="1589210878898" duration="9880000" />
     </task>
     <task id="LOCAL-00001" summary="commit tool 1.0.0">
       <created>1587905904474</created>
@@ -89,6 +191,42 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="419" y="30" key="Github.UntrackedFilesDialog/0.0.1280.800@0.0.1280.800" timestamp="1587904984396" />
+    <state width="1238" height="189" key="GridCell.Tab.0.bottom" timestamp="1589253375104">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="189" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1589253375104" />
+    <state width="1238" height="373" key="GridCell.Tab.0.bottom/0.23.1280.726@0.23.1280.726" timestamp="1589250507655" />
+    <state width="1238" height="189" key="GridCell.Tab.0.center" timestamp="1589253375103">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="189" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1589253375103" />
+    <state width="1238" height="373" key="GridCell.Tab.0.center/0.23.1280.726@0.23.1280.726" timestamp="1589250507654" />
+    <state width="1238" height="189" key="GridCell.Tab.0.left" timestamp="1589253375103">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="189" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1589253375103" />
+    <state width="1238" height="373" key="GridCell.Tab.0.left/0.23.1280.726@0.23.1280.726" timestamp="1589250507654" />
+    <state width="1238" height="189" key="GridCell.Tab.0.right" timestamp="1589253375104">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="189" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1589253375104" />
+    <state width="1238" height="373" key="GridCell.Tab.0.right/0.23.1280.726@0.23.1280.726" timestamp="1589250507655" />
+    <state width="1238" height="311" key="GridCell.Tab.1.bottom" timestamp="1589248382628">
+      <screen x="0" y="23" width="1280" height="726" />
+    </state>
+    <state width="1238" height="311" key="GridCell.Tab.1.bottom/0.23.1280.726@0.23.1280.726" timestamp="1589248382628" />
+    <state width="1238" height="311" key="GridCell.Tab.1.center" timestamp="1589248382627">
+      <screen x="0" y="23" width="1280" height="726" />
+    </state>
+    <state width="1238" height="311" key="GridCell.Tab.1.center/0.23.1280.726@0.23.1280.726" timestamp="1589248382627" />
+    <state width="1238" height="311" key="GridCell.Tab.1.left" timestamp="1589248382627">
+      <screen x="0" y="23" width="1280" height="726" />
+    </state>
+    <state width="1238" height="311" key="GridCell.Tab.1.left/0.23.1280.726@0.23.1280.726" timestamp="1589248382627" />
+    <state width="1238" height="311" key="GridCell.Tab.1.right" timestamp="1589248382628">
+      <screen x="0" y="23" width="1280" height="726" />
+    </state>
+    <state width="1238" height="311" key="GridCell.Tab.1.right/0.23.1280.726@0.23.1280.726" timestamp="1589248382628" />
     <state x="141" y="39" key="SettingsEditor" timestamp="1589085504909">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -101,5 +239,20 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="288" y="180" key="git4idea.merge.GitPullDialog/0.0.1280.800@0.0.1280.800" timestamp="1587905107073" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/equiv/equiv_wrapper.py</url>
+          <line>142</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/learning_OTA_by_testing$main.coverage" NAME="main Coverage Results" MODIFIED="1589253375089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/learning_OTA_by_testing$demo.coverage" NAME="demo Coverage Results" MODIFIED="1589248347544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

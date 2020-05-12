@@ -1,7 +1,7 @@
 import math
 import random
 from timedWord import TimedWord, ResetTimedWord, LRTW_to_DRTW
-from tester import testLTWs, testDTWs
+from tester import testLTWs, testDTWs, testDTWs_2
 
 
 # 成员查询
@@ -25,43 +25,25 @@ def EQs(hypothesis, upperGuard, epsilon, delta, stateNum, targetSys, eqNum, test
     while i <= testSum:
         sample = sampleGeneration(hypothesis.inputs, upperGuard, stateNum)  # sample is DTWs
         # 猜测结果 - 全
-        LRTWs, value = getHpyDTWsValue(sample, hypothesis)
+        DRTWs, value = getHpyDTWsValue(sample, hypothesis)
         # 目标结果 - 全
-        realLRTWs, realValue = testDTWs(sample, targetSys)
+        realDRTWs, realValue = testDTWs_2(sample, targetSys)
         testNum += 1
-        # flag, realDRTWs, realValue = targetSys.isDTWsTested(sample)
-        # if not flag:
-        #     testNum += 1
-        #     realDRTWs, realValue = testDTWs(sample, targetSys)
-        #     targetSys.addTestResult(DRTW_to_LRTW(realDRTWs), value)
         # 结果比较
-        if LRTWs == realLRTWs:
-            if value != realValue:
-                # print('1—', value, ' 2-', realValue)
-                flag = False
-                ctx = realLRTWs
-                break
-        else:
-            # print('1—', [i.show() for i in LRTWs], ' 2-', [i.show() for i in realLRTWs])
+        if (realValue == 1 and value != 1) or (realValue != 1 and value == 1):
             flag = False
-            minLRTWs = []
-            for i in range(len(realLRTWs)):
-                minLRTWs.append(realLRTWs[i])
-                if realLRTWs[i] != LRTWs[i]:
-                    break
-            ctx = minLRTWs
+            ctx = realDRTWs
             break
         i += 1
-    ctx = LRTW_to_DRTW(ctx)
     return flag, ctx, testNum
 
 
 # 根据设定的分布随机采样 - PAC采样
 def sampleGeneration(inputs, upperGuard, stateNum):
     sample = []
-    length = math.ceil(random.gauss(stateNum / 2, stateNum))
+    length = math.ceil(random.gauss(stateNum, stateNum / 2))
     while length < 0:
-        length = math.ceil(random.gauss(stateNum / 2, stateNum))
+        length = math.ceil(random.gauss(stateNum, stateNum / 2))
     for i in range(length):
         input = inputs[random.randint(0, len(inputs) - 1)]
         time = random.randint(0, upperGuard * 3) / 2
@@ -72,14 +54,14 @@ def sampleGeneration(inputs, upperGuard, stateNum):
     return sample
 
 
-# 假设下输入DTWs，获得LRTWs+value(补全)
+# 假设下输入DTWs，获得DRTWs+value
 def getHpyDTWsValue(sample, hypothesis):
-    LRTWs = []
+    DRTWs = []
     nowTime = 0
     curState = hypothesis.initState
     for dtw in sample:
         if curState == hypothesis.sinkState:
-            LRTWs.append(ResetTimedWord(dtw.input, dtw.time, True))
+            DRTWs.append(ResetTimedWord(dtw.input, dtw.time, True))
         else:
             time = dtw.time + nowTime
             newLTW = TimedWord(dtw.input, time)
@@ -92,7 +74,7 @@ def getHpyDTWsValue(sample, hypothesis):
                     else:
                         nowTime = time
                         isReset = False
-                    LRTWs.append(ResetTimedWord(newLTW.input, newLTW.time, isReset))
+                    DRTWs.append(ResetTimedWord(dtw.input, dtw.time, isReset))
                     break
     if curState in hypothesis.acceptStates:
         value = 1
@@ -100,4 +82,4 @@ def getHpyDTWsValue(sample, hypothesis):
         value = -1
     else:
         value = 0
-    return LRTWs, value
+    return DRTWs, value

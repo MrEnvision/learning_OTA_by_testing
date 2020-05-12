@@ -4,7 +4,7 @@ import time
 from learner import learnOTA
 from system import buildSystem
 from makePic import makeOTA, makeLearnedOTA
-from validate import getPassingRate
+from error import getError
 
 
 def main():
@@ -23,12 +23,13 @@ def main():
         upperGuard = custom["upperGuard"]  # 时间上界
         epsilon = custom["epsilon"]  # 准确度
         delta = custom["delta"]  # 置信度
-        stateNum = custom["stateNum"]  # 状态数(含sink状态) - 主要用于分布的实现，实际根据经验获得
+        stateNum = custom["stateNum"]  # 状态数(含sink状态) - 主要用于分布的实现，实际可以不需要
 
     ### 学习OTA
     startLearning = time.time()
-    learnedSys, mqNum, eqNum, testNum = learnOTA(targetSys, inputs, upperGuard, epsilon, delta, stateNum)
-    passingRate = getPassingRate(learnedSys, targetSys, upperGuard, stateNum, testNum)
+    # learner
+    learnedSys, mqNum, eqNum, testNum, metric = learnOTA(targetSys, inputs, upperGuard, epsilon, delta, stateNum)
+    passingRate = getError(learnedSys, targetSys, upperGuard, stateNum)
     endLearning = time.time()
 
     ### 学习结果
@@ -52,7 +53,7 @@ def main():
             "mqNum": mqNum,
             "eqNum": eqNum,
             "testNum": testNum,
-            "passingRate": passingRate
+            "metric": metric
         }
         return resultObj
 
@@ -74,9 +75,10 @@ if __name__ == '__main__':
     #     json_file.write(json_str)
 
     # 目标模型
+    # filePath = "Automata/experiment_state/5_2_5_2-1"
     filePath = "Automata/TCP"
     # 实验次数
-    testTime = 1
+    testTime = 8
     # 实验结果
     data = {}
     for i in range(testTime):

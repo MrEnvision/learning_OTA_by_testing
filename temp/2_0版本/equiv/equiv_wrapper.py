@@ -2,10 +2,11 @@ import os
 from equiv import equivalence
 from equiv import ota as old_ota
 from equiv import interval as old_interval
+from hypothesis import OTA, OTATran
 from system import buildSystem
 from comparator import buildCanonicalOTA
+from system import systemOutput
 from timedWord import TimedWord, ResetTimedWord
-from tester import testDTWs_2
 
 
 def transform_system(system, name, flag):
@@ -31,7 +32,7 @@ def transform_system(system, name, flag):
     return ota
 
 
-def hpyCompare(stableHpy, hypothesisOTA, upperGuard, targetSys, targetFullSys, mqNum):
+def hpyCompare(stableHpy, hypothesisOTA, upperGuard, targetSys, targetFullSys, mqNum, metric):
     """
     stableHpy: old candidate automata
     hypothesisOTA: new candidate automata
@@ -44,31 +45,31 @@ def hpyCompare(stableHpy, hypothesisOTA, upperGuard, targetSys, targetFullSys, m
     """
     # 第一次不进行比较
     if stableHpy is None:
-        return True, [], mqNum
+        return True, [], mqNum, metric
 
     sys = transform_system(stableHpy, "A", "s")
     sys2 = transform_system(hypothesisOTA, "B", "q")
 
-    res, w_pos = equivalence.ota_inclusion(upperGuard + 1, sys, sys2)
+    res, w_pos = equivalence.ota_inclusion(upperGuard+1, sys, sys2)
     # dtw_pos is accepted by sys2 but not sys.
     if not res:
         dtw_pos = equivalence.findDelayTimedwords(w_pos, 's', sys2.sigma)
         print(dtw_pos)
 
-    res2, w_neg = equivalence.ota_inclusion(upperGuard + 1, sys2, sys)
+    res2, w_neg = equivalence.ota_inclusion(upperGuard+1, sys2, sys)
     # dtw_neg is accepted by sys but not sys2.
     if not res2:
         dtw_neg = equivalence.findDelayTimedwords(w_neg, 's', sys.sigma)
         print(dtw_neg)
 
     if res and res2:
-        # print('_____________________________')
-        # stableHpy.showOTA()
-        # print('_____________________________')
-        # hypothesisOTA.showOTA()
+        print('_____________________________')
+        stableHpy.showOTA()
+        print('_____________________________')
+        hypothesisOTA.showOTA()
         raise NotImplementedError('hpyCompare should always find a difference')
-    # print(type(w_pos))
-    # print(type(w_neg))
+    print(type(w_pos))
+    print(type(w_neg))
     if res and not res2:
         hpy_flag, ctx = 0, dtw_neg
     elif res2 and not res:
@@ -88,7 +89,13 @@ def hpyCompare(stableHpy, hypothesisOTA, upperGuard, targetSys, targetFullSys, m
         flag = False
         newCtx = realDRTWs
 
-    return flag, newCtx, mqNum + 1
+    return flag, newCtx, mqNum + 1, ''
+
+
+# delay-timed test - 输入DTWs，返回DRTWs
+def testDTWs_2(DTWs, targetSys):
+    DRTWs, value = systemOutput(DTWs, targetSys)
+    return DRTWs, value
 
 
 # 假设下输入DTWs，获得DRTWs+value
