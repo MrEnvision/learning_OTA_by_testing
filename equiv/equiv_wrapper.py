@@ -49,23 +49,25 @@ def hpyCompare(stableHpy, hypothesisOTA, upperGuard, targetSys, targetFullSys, m
     sys = transform_system(stableHpy, "A", "s")
     sys2 = transform_system(hypothesisOTA, "B", "q")
 
-    res, w_pos = equivalence.ota_inclusion(upperGuard + 1, sys, sys2)
+    max_time_value = max(sys.max_time_value(), sys2.max_time_value(), upperGuard)
+
+    res, w_pos = equivalence.ota_inclusion(int(max_time_value), sys, sys2)
     # dtw_pos is accepted by sys2 but not sys.
     if not res:
         dtw_pos = equivalence.findDelayTimedwords(w_pos, 's', sys2.sigma)
-        print(dtw_pos)
+        print('res', dtw_pos)
 
-    res2, w_neg = equivalence.ota_inclusion(upperGuard + 1, sys2, sys)
+    res2, w_neg = equivalence.ota_inclusion(int(max_time_value), sys2, sys)
     # dtw_neg is accepted by sys but not sys2.
     if not res2:
         dtw_neg = equivalence.findDelayTimedwords(w_neg, 's', sys.sigma)
-        print(dtw_neg)
+        print('res2', dtw_neg)
 
     if res and res2:
-        # print('_____________________________')
-        # stableHpy.showOTA()
-        # print('_____________________________')
-        # hypothesisOTA.showOTA()
+        print('_____________________________')
+        stableHpy.showOTA()
+        print('_____________________________')
+        hypothesisOTA.showOTA()
         raise NotImplementedError('hpyCompare should always find a difference')
     # print(type(w_pos))
     # print(type(w_neg))
@@ -78,6 +80,8 @@ def hpyCompare(stableHpy, hypothesisOTA, upperGuard, targetSys, targetFullSys, m
     else:
         hpy_flag, ctx = 0, dtw_neg
 
+    print('hpy_flag', hpy_flag)
+
     flag = True
     newCtx = []
     tempCtx = []
@@ -85,6 +89,8 @@ def hpyCompare(stableHpy, hypothesisOTA, upperGuard, targetSys, targetFullSys, m
         tempCtx.append(TimedWord(i.action, i.time))
     realDRTWs, realValue = testDTWs_2(tempCtx, targetSys)
     if (realValue == 1 and hpy_flag != 1) or (realValue != 1 and hpy_flag == 1):
+        print('realValue', realValue)
+        print('hpy_flag', hpy_flag)
         flag = False
         newCtx = realDRTWs
 
@@ -123,7 +129,8 @@ def getHpyDTWsValue_2(sample, teacher):
 
 
 if __name__ == "__main__":
-    experiments_path = os.getcwd() + '/Automata/'
+    # experiments_path = os.getcwd() + '/Automata/'
+    experiments_path = '../Automata/'
     A = buildSystem(experiments_path + 'example3.json')
     AA = buildCanonicalOTA(A)
 
@@ -136,25 +143,40 @@ if __name__ == "__main__":
     sys2 = transform_system(HH, "B", "q")
     sys2.show()
 
-    max_time_value = 10
+    max_time_value = 20
 
     # hpyCompare(AA, HH, max_time_value, None, None, 0, 0.0)
 
     res, w_pos = equivalence.ota_inclusion(max_time_value, sys, sys2)
     # drtw_pos is accepted by sys2 but not sys.
-    # drtw_pos = equivalence.dTWs_to_dRTWs(w_pos, 's', sys2)
+    if not res:
+        dtw_pos = equivalence.findDelayTimedwords(w_pos, 's', sys2.sigma)
+        print('res', dtw_pos)
 
     res2, w_pos2 = equivalence.ota_inclusion(max_time_value, sys2, sys)
     # drtw_pos2 is accepted by sys but not sys2.
-    # drtw_pos2 = equivalence.dTWs_to_dRTWs(w_pos2, 's', sys)
+    if not res2:
+        dtw_neg = equivalence.findDelayTimedwords(w_pos2, 's', sys.sigma)
+        print('res2', dtw_neg)
 
     print(res)
     # print(drtw_pos)
     print(res2)
     # print(drtw_pos2)
 
+    if res and not res2:
+        hpy_flag = 0
+    elif res2 and not res:
+        hpy_flag = 1
+    elif len(w_pos.lw) <= len(w_pos2.lw):
+        hpy_flag = 1
+    else:
+        hpy_flag = 0
+
+    print(hpy_flag)
+
     print('_____________________________')
-    dtws = [TimedWord('a', 6), TimedWord('b', 6)]
+    dtws = [TimedWord('a', 2.1), TimedWord('b', 2.1),TimedWord('b', 1.1),TimedWord('a', 0.1),TimedWord('b', 2.1)]
     realDRTWs1, realValue1 = getHpyDTWsValue_2(dtws, AA)
     realDRTWs2, realValue2 = getHpyDTWsValue_2(dtws, HH)
     print([i.show() for i in dtws])

@@ -11,6 +11,18 @@ class OTA(object):
         self.acceptStates = acceptStates
         self.sinkState = sinkState
 
+    def max_time_value(self):
+        max_time_value = 0
+        for tran in self.trans:
+            for c in tran.guards:
+                if c.max_value == '+':
+                    temp_max_value = int(c.min_value)
+                else:
+                    temp_max_value = int(c.max_value)
+                if max_time_value < temp_max_value:
+                    max_time_value = temp_max_value
+        return max_time_value
+
     def showDiscreteOTA(self):
         print("Input: " + str(self.inputs))
         print("States: " + str(self.states))
@@ -112,9 +124,12 @@ def structDiscreteOTA(table, inputs):
         needNewTran = True
         for tran in trans:
             if source == tran.source and input == tran.input and target == tran.target and isReset == tran.isReset:
-                if timeList[0] in tran.timeList:
+                if timeList[0] not in tran.timeList:
+                    tran.timeList.append(timeList[0])
                     needNewTran = False
-                    break
+                else:
+                    needNewTran = False
+                break
         if needNewTran:
             tempTran = DiscreteOTATran(transNum, source, input, timeList, isReset, target)
             trans.append(tempTran)
@@ -170,9 +185,10 @@ def structHypothesisOTA(discreteOTA):
                             tempGuard = timeInterval.Guard("(" + str(math.modf(tw)[1]) + ",+)")
                         guards.append(tempGuard)
                 guards = sortGuards(guards)
-                # guards = simpleGuards(guards)
-                tempTran = OTATran(tran.tranId, tran.source, tran.input, guards, tran.isReset, tran.target)
-                trans.append(tempTran)
+                guards = simpleGuards(guards)
+                for guard in guards:
+                    tempTran = OTATran(tran.tranId, tran.source, tran.input, [guard], tran.isReset, tran.target)
+                    trans.append(tempTran)
     hypothesisOTA = OTA(inputs, states, trans, initState, acceptStates, sinkState)
     return hypothesisOTA
 

@@ -1,0 +1,16 @@
+digraph {
+	0 [label=0]
+	2 [label=2 shape=doublecircle]
+	3 [label=3]
+	4 [label=4]
+	5 [label=5]
+	6 [label=6]
+	0 -> 3 [label=" a (2.0,5.0] True"]
+	0 -> 5 [label=" b [1.0,5.0) True"]
+	2 -> 6 [label=" b [4.0,+) False"]
+	2 -> 0 [label=" b (2.0,4.0) False"]
+	3 -> 2 [label=" b [1.0,+) True"]
+	3 -> 4 [label=" a [5.0,+) False"]
+	5 -> 3 [label=" b (0.0,+) True"]
+	5 -> 5 [label=" a (1.0,+) True"]
+}

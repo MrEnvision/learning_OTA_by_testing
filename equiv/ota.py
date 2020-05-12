@@ -152,10 +152,10 @@ class OTA(object):
                 temp_max_value = 0
                 #temp_closed = True
                 if c.max_value == '+':
-                    temp_max_value = int(c.min_value)
+                    temp_max_value = float(c.min_value)
                     #temp_closed = c.closed_min
                 else:
-                    temp_max_value = int(c.max_value)
+                    temp_max_value = float(c.max_value)
                     #temp_closed = c.closed_max
                 if max_time_value < temp_max_value:
                     max_time_value = temp_max_value
