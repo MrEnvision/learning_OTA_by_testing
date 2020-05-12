@@ -106,7 +106,7 @@ def buildCanonicalOTA(targetSys):
             else:
                 addGuards = [timeInterval.Guard('[0,+)')]
             if len(addGuards) > 0:
-                sinkState = '100'
+                sinkState = 'sink'
                 sinkFlag = True
                 for guard in addGuards:
                     tempTran = OTATran(tranNumber, state, key, [guard], True, sinkState)

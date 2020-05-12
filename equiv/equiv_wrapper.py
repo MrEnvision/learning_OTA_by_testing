@@ -129,8 +129,8 @@ def getHpyDTWsValue_2(sample, teacher):
 
 
 if __name__ == "__main__":
-    # experiments_path = os.getcwd() + '/Automata/'
-    experiments_path = '../Automata/'
+    experiments_path = os.getcwd() + '/Automata/'
+    # experiments_path = '../Automata/'
     A = buildSystem(experiments_path + 'example3.json')
     AA = buildCanonicalOTA(A)
 
