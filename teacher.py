@@ -20,7 +20,7 @@ def TQs(LTWs, targetSys, mqNum):
 def EQs(hypothesis, upperGuard, epsilon, delta, stateNum, targetSys, eqNum, testNum):
     flag = True  # 等价True，不等价False
     ctx = []
-    testSum = (math.log(1 / epsilon) + math.log(2) * (eqNum + 1)) / delta  # 人为定义最大测试次数
+    testSum = (math.log(1 / delta) + math.log(2) * (eqNum + 1)) / epsilon  # 人为定义最大测试次数
     i = 1
     while i <= testSum:
         sample = sampleGeneration(hypothesis.inputs, upperGuard, stateNum)  # sample is DTWs
