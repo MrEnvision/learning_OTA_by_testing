@@ -1,7 +1,0 @@
-{
-  "inputs": ["a", "b"],
-  "upperGuard": 6,
-  "stateNum": 6,
-  "epsilon": 0.01,
-  "delta": 0.01
-}

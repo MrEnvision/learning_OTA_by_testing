@@ -11,7 +11,7 @@ def main():
     ### 构建目标系统
     # targetSys = buildSystem(modelFile)
     # makeOTA(targetSys, '.', '/results/targetSys')
-    targetSys = buildSystem(filePath + "/5_2_2.json")
+    targetSys = buildSystem(filePath + "/example.json")
     # makeOTA(targetSys, filePath, '/results/目标系统')
 
     ### 获取前提条件
@@ -38,7 +38,7 @@ def main():
     else:
         print("---------------------------------------------------")
         print("Succeed! The learned OTA is as follows.")
-        makeLearnedOTA(learnedSys, filePath, '/results/learnedSys' + str(i))
+        # makeLearnedOTA(learnedSys, filePath, '/results/learnedSys' + str(i))
         print("---------------------------------------------------")
         print("learning time: " + str(endLearning - startLearning))
         print("mqNum: " + str(mqNum))
@@ -74,15 +74,15 @@ if __name__ == '__main__':
     #     json_file.write(json_str)
 
     # 目标模型
-    filePath = "Automata/experiment_state/5_2_5_2-1"
+    filePath = "Automata/TCP"
     # 实验次数
-    testTime = 20
+    testTime = 5
     # 实验结果
-    data = {}
+    # data = {}
     for i in range(testTime):
         print("Now: ", i)
         result = main()
-        data.update({i: result})
-    json_str = json.dumps(data, indent=2)
-    with open(filePath + "/result_1.json", 'w') as json_file:
-        json_file.write(json_str)
+    #     data.update({i: result})
+    # json_str = json.dumps(data, indent=2)
+    # with open(filePath + "/result.json", 'w') as json_file:
+    #     json_file.write(json_str)

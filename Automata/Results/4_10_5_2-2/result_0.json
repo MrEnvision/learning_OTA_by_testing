@@ -1,0 +1,82 @@
+{
+  "0": {
+    "Data": "Success",
+    "time": 46.12061905860901,
+    "mqNum": 390,
+    "eqNum": 54,
+    "testNum": 23077,
+    "passingRate": 0.9935866880443732
+  },
+  "1": {
+    "Data": "Success",
+    "time": 99.73816394805908,
+    "mqNum": 703,
+    "eqNum": 74,
+    "testNum": 36191,
+    "passingRate": 0.9751872012378768
+  },
+  "2": {
+    "Data": "Success",
+    "time": 668.3344922065735,
+    "mqNum": 1598,
+    "eqNum": 125,
+    "testNum": 95120,
+    "passingRate": 0.9986753574432295
+  },
+  "3": {
+    "Data": "Success",
+    "time": 122.94564771652222,
+    "mqNum": 724,
+    "eqNum": 79,
+    "testNum": 40984,
+    "passingRate": 0.9975112238922507
+  },
+  "4": {
+    "Data": "Success",
+    "time": 363.77165389060974,
+    "mqNum": 1248,
+    "eqNum": 115,
+    "testNum": 101243,
+    "passingRate": 0.9944489989431368
+  },
+   "5": {
+    "Data": "Success",
+    "time": 156.0493769645691,
+    "mqNum": 761,
+    "eqNum": 80,
+    "testNum": 38068,
+    "passingRate": 0.9979510349900179
+  },
+  "6": {
+    "Data": "Success",
+    "time": 58.23803424835205,
+    "mqNum": 645,
+    "eqNum": 64,
+    "testNum": 24685,
+    "passingRate": 0.9814462224022685
+  },
+  "7": {
+    "Data": "Success",
+    "time": 102.96073889732361,
+    "mqNum": 691,
+    "eqNum": 79,
+    "testNum": 36713,
+    "passingRate": 0.9971944542805001
+  },
+  "8": {
+    "Data": "Success",
+    "time": 58.25092101097107,
+    "mqNum": 466,
+    "eqNum": 63,
+    "testNum": 23456,
+    "passingRate": 0.9833731241473397
+  },
+  "9": {
+    "Data": "Success",
+    "time": 493.60836601257324,
+    "mqNum": 990,
+    "eqNum": 115,
+    "testNum": 88163,
+    "passingRate": 0.9973004548393317
+  }
+}

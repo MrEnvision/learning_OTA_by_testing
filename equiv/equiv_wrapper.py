@@ -28,6 +28,7 @@ def transform_system(system, name, flag):
                                      tran.isReset, tran.target, flag))
 
     ota = old_ota.OTA(name, system.inputs, locations, trans, system.initState, system.acceptStates)
+    ota.sink_name = system.sinkState
     return ota
 
 
@@ -54,7 +55,7 @@ def hpyCompare(stableHpy, hypothesisOTA, upperGuard, targetSys, targetFullSys, m
     res, w_pos = equivalence.ota_inclusion(int(max_time_value), sys, sys2)
     # dtw_pos is accepted by sys2 but not sys.
     if not res:
-        dtw_pos = equivalence.findDelayTimedwords(w_pos, 's', sys2.sigma)
+        dtw_pos = equivalence.findDelayTimedwords(w_pos, 'q', sys2.sigma)
         print('res', dtw_pos)
 
     res2, w_neg = equivalence.ota_inclusion(int(max_time_value), sys2, sys)
@@ -69,8 +70,7 @@ def hpyCompare(stableHpy, hypothesisOTA, upperGuard, targetSys, targetFullSys, m
         print('_____________________________')
         hypothesisOTA.showOTA()
         raise NotImplementedError('hpyCompare should always find a difference')
-    # print(type(w_pos))
-    # print(type(w_neg))
+
     if res and not res2:
         hpy_flag, ctx = 0, dtw_neg
     elif res2 and not res:
@@ -80,7 +80,7 @@ def hpyCompare(stableHpy, hypothesisOTA, upperGuard, targetSys, targetFullSys, m
     else:
         hpy_flag, ctx = 0, dtw_neg
 
-    print('hpy_flag', hpy_flag)
+    # print('hpy_flag', hpy_flag)
 
     flag = True
     newCtx = []
@@ -88,9 +88,10 @@ def hpyCompare(stableHpy, hypothesisOTA, upperGuard, targetSys, targetFullSys, m
     for i in ctx:
         tempCtx.append(TimedWord(i.action, i.time))
     realDRTWs, realValue = testDTWs_2(tempCtx, targetSys)
+    # if realValue != hpy_flag:
     if (realValue == 1 and hpy_flag != 1) or (realValue != 1 and hpy_flag == 1):
-        print('realValue', realValue)
-        print('hpy_flag', hpy_flag)
+        # print('realValue', realValue)
+        # print('hpy_flag', hpy_flag)
         flag = False
         newCtx = realDRTWs
 
@@ -150,7 +151,7 @@ if __name__ == "__main__":
     res, w_pos = equivalence.ota_inclusion(max_time_value, sys, sys2)
     # drtw_pos is accepted by sys2 but not sys.
     if not res:
-        dtw_pos = equivalence.findDelayTimedwords(w_pos, 's', sys2.sigma)
+        dtw_pos = equivalence.findDelayTimedwords(w_pos, 'q', sys2.sigma)
         print('res', dtw_pos)
 
     res2, w_pos2 = equivalence.ota_inclusion(max_time_value, sys2, sys)

@@ -1,6 +1,0 @@
-digraph {
-	0 [label=0]
-	2 [label=2 shape=doublecircle]
-	0 -> 2 [label=" b [2.0,+) False"]
-	0 -> 0 [label=" a [2.0,+) True"]
-}

@@ -30,6 +30,7 @@ def EQs(hypothesis, upperGuard, epsilon, delta, stateNum, targetSys, eqNum, test
         realDRTWs, realValue = testDTWs_2(sample, targetSys)
         testNum += 1
         # 结果比较
+        # if realValue != value:
         if (realValue == 1 and value != 1) or (realValue != 1 and value == 1):
             flag = False
             ctx = realDRTWs
