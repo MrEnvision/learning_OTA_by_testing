@@ -1,6 +1,6 @@
 import json
 import timeInterval
-from timedWord import ResetTimedWord, TimedWord, LRTW_to_LTW, LRTW_to_DTW
+from timedWord import ResetTimedWord, TimedWord
 
 
 class TestResult(object):
@@ -10,33 +10,23 @@ class TestResult(object):
 
 
 class System(object):
-    def __init__(self, inputs, states, trans, initState, acceptStates, MQs=None):
-        if MQs is None:
-            MQs = {}
+    def __init__(self, inputs, states, trans, initState, acceptStates):
         self.inputs = inputs
         self.states = states
         self.trans = trans
         self.initState = initState
         self.acceptStates = acceptStates
-        self.MQs = MQs
 
-    def isLTWsTested(self, trace):
-        for value in self.MQs.values():
-            if LRTW_to_LTW(value.LRTWs) == trace:
-                return True, value.LRTWs, value.result
-        else:
-            return False, [], []
-
-    def isDTWsTested(self, trace):
-        for value in self.MQs.values():
-            if LRTW_to_DTW(value.LRTWs) == trace:
-                return True, value.LRTWs, value.result
-        else:
-            return False, [], []
-
-    def addTestResult(self, LRTWs, result):
-        eleId = len(self.MQs)
-        self.MQs.update({eleId: TestResult(LRTWs, result)})
+    def getInputsDic(self):
+        dic = {}
+        for state in self.states:
+            dic[state] = []
+        for state in self.states:
+            for tran in self.trans:
+                if tran.source == state:
+                    if tran.input not in dic[state]:
+                        dic[state].append(tran.input)
+        return dic
 
 
 class SysTran(object):
@@ -62,29 +52,28 @@ class SysTran(object):
         return temp
 
 
-# 构建系统
+# build target system
 def buildSystem(jsonFile):
     with open(jsonFile, 'r') as f:
-        # 文件数据获取
         data = json.load(f)
         inputs = data["inputs"]
         states = data["states"]
         trans = data["trans"]
         initState = data["initState"]
         acceptStates = data["acceptStates"]
-    # trans 处理
+    # trans
     transSet = []
     for tran in trans:
         tranId = str(tran)
         source = trans[tran][0]
         target = trans[tran][4]
         input = trans[tran][1]
-        # 重置信息
+        # reset signal
         resetTemp = trans[tran][3]
         isReset = False
         if resetTemp == "r":
             isReset = True
-        # 时间处理 - guard
+        # time guard
         intervalsStr = trans[tran][2]
         intervalsList = intervalsStr.split('U')
         guards = []
@@ -98,14 +87,14 @@ def buildSystem(jsonFile):
     return system
 
 
-# 系统交互 - 输入DTWs，输出DRTWs和value（DRTWs补全）- 用于delay-timed test
-def systemOutput(DTWs, targetSys):
+# input -> DTWs，output -> DRTWs and value - delay-timed test
+def systemTest(DTWs, targetSys):
     DRTWs = []
     value = []
     nowTime = 0
     curState = targetSys.initState
     for dtw in DTWs:
-        if curState == "Error":
+        if curState == "sink":
             DRTWs.append(ResetTimedWord(dtw.input, dtw.time, True))
             value = -1
         else:
@@ -127,18 +116,18 @@ def systemOutput(DTWs, targetSys):
             if not flag:
                 DRTWs.append(ResetTimedWord(dtw.input, dtw.time, True))
                 value = -1
-                curState = "Error"
+                curState = "sink"
     if curState in targetSys.acceptStates:
         value = 1
-    elif curState != 'Error':
+    elif curState != 'sink':
         value = 0
     return DRTWs, value
 
 
-# 系统交互 - 输入单个DTW，输出当前状态和value - 用于logical-timed test
-def systemTest(DTW, nowTime, curState, targetSys):
+# input -> DTW(single)，output -> curState and value - logical-timed test
+def systemOutput(DTW, nowTime, curState, targetSys):
     value = None
-    resetFlag = False  # 重置信号
+    resetFlag = False
     tranFlag = False  # tranFlag为true表示有这样的迁移
     if DTW is None:
         if curState in targetSys.acceptStates:
@@ -156,10 +145,10 @@ def systemTest(DTW, nowTime, curState, targetSys):
                 break
         if not tranFlag:
             value = -1
-            curState = 'Error'
+            curState = 'sink'
             resetFlag = True
         if curState in targetSys.acceptStates:
             value = 1
-        elif curState != 'Error':
+        elif curState != 'sink':
             value = 0
     return curState, value, resetFlag

@@ -1,19 +1,17 @@
 from teacher import sampleGeneration, getHpyDTWsValue
-from tester import testDTWs_2
+from tester import testDTWs
 
 
-def getPassingRate(learnedSys, targetSys, upperGuard, stateNum, testNum):
+def validate(learnedSys, targetSys, upperGuard, stateNum, testNum):
     failNum = 0
-    passNum = 0
     for i in range(testNum):
-        sample = sampleGeneration(learnedSys.inputs, upperGuard, stateNum)  # sample is DTWs
-        LRTWs, value = getHpyDTWsValue(sample, learnedSys)
-        realLRTWs, realValue = testDTWs_2(sample, targetSys)
-        if LRTWs == realLRTWs:
-            if value != realValue:
-                failNum += 1
-            else:
-                passNum += 1
-        else:
+        sample = sampleGeneration(learnedSys.inputs, upperGuard, stateNum, targetSys)
+        DRTWs, value = getHpyDTWsValue(sample, learnedSys)
+        realDRTWs, realValue = testDTWs(sample, targetSys)
+        if (realValue == 1 and value != 1) or (realValue != 1 and value == 1):
             failNum += 1
-    return passNum / testNum
+        # if realValue != value:
+        #     failNum += 1
+        # else:
+        #     passNum += 1
+    return (testNum - failNum) / testNum

@@ -184,7 +184,7 @@ def makeConsistent(table, consistentAdd, targetSys, mqNum):
     return table, mqNum
 
 
-# 处理反例 - 添加反例的所有前缀集 - 缺点：很难找到状态识别集
+# 处理反例 - 添加反例的所有前缀集
 def dealCtx(table, ctx, targetSys, mqNum):
     newCtx = DRTW_to_LRTW(ctx)
     newCtx = normalize(newCtx)

@@ -1,53 +1,48 @@
-import sys
 import json
 import time
-from learner import learnOTA
 from system import buildSystem
+from learner import learnOTA
 from makePic import makeOTA, makeLearnedOTA
-from validate import getPassingRate
+from validate import validate
+from hypothesis import structSimpleHypothesis
 
 
 def main():
-    ### 构建目标系统
-    # targetSys = buildSystem(modelFile)
-    # makeOTA(targetSys, '.', '/results/targetSys')
-    targetSys = buildSystem(filePath + "/example.json")
+    # build target system
+    targetSys = buildSystem(modelFile)
     makeOTA(targetSys, filePath, '/results/目标系统')
 
-    ### 获取前提条件
-    # with open(preFile, 'r') as f:
-    with open(filePath + '/precondition.json', 'r') as f:
-        # 文件数据获取
-        custom = json.load(f)
-        inputs = custom["inputs"]  # input字母表
-        upperGuard = custom["upperGuard"]  # 时间上界
-        epsilon = custom["epsilon"]  # 准确度
-        delta = custom["delta"]  # 置信度
-        stateNum = custom["stateNum"]  # 状态数(含sink状态) - 主要用于分布的实现，实际根据经验获得
+    # get prior information required for learning
+    with open(preconditionFile, 'r') as fr:
+        information = json.load(fr)
+        inputs = information["inputs"]
+        upperGuard = information["upperGuard"]
+        epsilon = information["epsilon"]  # accuracy
+        delta = information["delta"]  # confidence
+        stateNum = information["stateNum"]
 
-    ### 学习OTA
+    # pac learning OTA
     startLearning = time.time()
-    learnedSys, mqNum, eqNum, testNum = learnOTA(targetSys, inputs, upperGuard, epsilon, delta, stateNum)
-    passingRate = getPassingRate(learnedSys, targetSys, upperGuard, stateNum, testNum)
+    learnedSys, mqNum, eqNum, testNum = learnOTA(targetSys, inputs, upperGuard, epsilon, delta, stateNum, debugFlag=False)
+    passingRate = validate(learnedSys, targetSys, upperGuard, stateNum, testNum)
     endLearning = time.time()
 
-    ### 学习结果
+    # learning result
     if learnedSys is None:
         print("Error! Learning Failed.")
-        return {"Data": "Failed"}
+        return {"result": "Failed"}
     else:
         print("---------------------------------------------------")
-        print("Succeed! The learned OTA is as follows.")
+        print("Learning Succeed! The result is as follows.")
+        learnedSys = structSimpleHypothesis(learnedSys)
         makeLearnedOTA(learnedSys, filePath, '/results/learnedSys' + str(i))
-        print("---------------------------------------------------")
-        print("learning time: " + str(endLearning - startLearning))
-        print("mqNum: " + str(mqNum))
-        print("eqNum: " + str(eqNum))
-        print("testNum: " + str(testNum))
-        # print("当前距离: " + str(metric))
+        print("Total time of learning: " + str(endLearning - startLearning))
+        print("Total number of MQs (no-cache): " + str(mqNum))
+        print("Total number of EQs (no-cache): " + str(eqNum))
+        print("Total number of test (no-cache): " + str(testNum))
         print('accuracy', str(1 - epsilon), ' passingRate', str(passingRate))
         resultObj = {
-            "Data": "Success",
+            "result": "Success",
             "time": endLearning - startLearning,
             "mqNum": mqNum,
             "eqNum": eqNum,
@@ -58,31 +53,21 @@ def main():
 
 
 if __name__ == '__main__':
-    # paras = sys.argv
-    # modelFile = paras[1]
-    # preFile = paras[2]
-    # # 实验次数
-    # testTime = 1
-    # # 实验结果
-    # data = {}
-    # for i in range(testTime):
-    #     print("Now: ", i)
-    #     result = main()
-    #     data.update({i: result})
-    # json_str = json.dumps(data, indent=2)
-    # with open("results/result_1.json", 'w') as json_file:
-    #     json_file.write(json_str)
-
-    # 目标模型
+    # file directory
     filePath = "Automata/TCP"
-    # 实验次数
-    testTime = 1
-    # 实验结果
-    data = {}
-    for i in range(testTime):
-        print("Now: ", i)
+    # target model file
+    modelFile = filePath + "/example.json"
+    # prior information required for learning
+    preconditionFile = filePath + "/precondition.json"
+    # number of experiments
+    experimentNum = 1
+    with open(filePath + "/result.json", 'w') as f:
+        json.dump({}, f)
+    for i in range(experimentNum):
+        print("Now experiment: ", i)
         result = main()
-        data.update({i: result})
-    json_str = json.dumps(data, indent=2)
-    with open(filePath + "/result.json", 'w') as json_file:
-        json_file.write(json_str)
+        with open(filePath + "/result.json", 'r') as jsonFile:
+            data = json.load(jsonFile)
+            data[str(i + 1)] = result
+        with open(filePath + "/result.json", 'w') as jsonFile:
+            jsonFile.write(json.dumps(data, indent=2))

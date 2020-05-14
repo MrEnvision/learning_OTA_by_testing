@@ -1,46 +1,78 @@
 import math
 import random
-from timedWord import TimedWord, ResetTimedWord, LRTW_to_DRTW
-from tester import testLTWs, testDTWs, testDTWs_2
+from tester import testLTWs, testDTWs
+from system import systemOutput
+from timedWord import TimedWord, ResetTimedWord
 
 
-# 成员查询
+# membership query
 def TQs(LTWs, targetSys, mqNum):
-    flag, LRTWs, value = targetSys.isLTWsTested(LTWs)
-    if flag:
-        return LRTWs, value, mqNum
-    else:
-        mqNum += 1
-        LRTWs, value = testLTWs(LTWs, targetSys)
-        targetSys.addTestResult(LRTWs, value)
-        return LRTWs, value, mqNum
+    mqNum += 1
+    LRTWs, value = testLTWs(LTWs, targetSys)
+    return LRTWs, value, mqNum
 
 
-# 等价查询 - ctx为DRTWs
+# equivalence query - ctx is DRTWs
 def EQs(hypothesis, upperGuard, epsilon, delta, stateNum, targetSys, eqNum, testNum):
-    flag = True  # 等价True，不等价False
+    flag = True  # True -> equivalence，False -> not equivalence
     ctx = []
-    testSum = (math.log(1 / delta) + math.log(2) * (eqNum + 1)) / epsilon  # 人为定义最大测试次数
+    testSum = (math.log(1 / delta) + math.log(2) * (eqNum + 1)) / epsilon
     i = 1
+    toSinkCount = 0
     while i <= testSum:
-        sample = sampleGeneration(hypothesis.inputs, upperGuard, stateNum)  # sample is DTWs
-        # 猜测结果 - 全
+        sample = sampleGeneration(hypothesis.inputs, upperGuard, stateNum, targetSys)  # sample is DTWs
         DRTWs, value = getHpyDTWsValue(sample, hypothesis)
-        # 目标结果 - 全
-        realDRTWs, realValue = testDTWs_2(sample, targetSys)
+        realDRTWs, realValue = testDTWs(sample, targetSys)
+        i += 1
         testNum += 1
-        # 结果比较
-        # if realValue != value:
-        if (realValue == 1 and value != 1) or (realValue != 1 and value == 1):
+        # compare result
+        if realValue == -1:
+            toSinkCount += 1
+            if realValue == -1 and value == 1:
+                flag = False
+                ctx = realDRTWs
+                break
+            else:
+                continue
+        elif (realValue == 1 and value != 1) or (realValue != 1 and value == 1):
             flag = False
             ctx = realDRTWs
             break
-        i += 1
+    print('# test to sink State: ', toSinkCount, ' testNum of current EQ: ', i)
     return flag, ctx, testNum
 
 
 # 根据设定的分布随机采样 - PAC采样
-def sampleGeneration(inputs, upperGuard, stateNum):
+def sampleGeneration(inputs, upperGuard, stateNum, targetSys):
+    sample = []
+    length = random.randint(1, stateNum * 2)
+    dic = targetSys.getInputsDic()
+
+    curState = targetSys.initState
+    nowTime = 0
+
+    for i in range(length):
+        curInputs = dic[curState]
+        input = curInputs[random.randint(0, len(curInputs) - 1)]
+        time = random.randint(0, upperGuard * 2 + 1)
+        if time % 2 == 0:
+            time = time // 2
+        else:
+            time = time // 2 + 0.1
+        temp = TimedWord(input, time)
+        sample.append(temp)
+
+        curState, value, resetFlag = systemOutput(temp, nowTime, curState, targetSys)
+        if resetFlag:
+            nowTime = 0
+        else:
+            nowTime = nowTime + time
+        if value == -1:
+            break
+    return sample
+
+
+def sampleGeneration_old_1(inputs, upperGuard, stateNum):
     sample = []
     length = math.ceil(random.gauss(stateNum, stateNum / 2))
     while length < 0:
@@ -54,6 +86,23 @@ def sampleGeneration(inputs, upperGuard, stateNum):
         sample.append(temp)
     return sample
 
+
+def sampleGeneration_old_2(inputs, upperGuard, stateNum):
+    sample = []
+    length = random.randint(1, stateNum * 2)
+    for i in range(length):
+        input = inputs[random.randint(0, len(inputs) - 1)]
+        time = random.randint(0, upperGuard * 2 + 1)
+        if time % 2 == 0:
+            time = time // 2
+        else:
+            time = time // 2 + 0.1
+        temp = TimedWord(input, time)
+        sample.append(temp)
+    return sample
+
+
+# --------------------------------- 辅助函数 ---------------------------------
 
 # 假设下输入DTWs，获得DRTWs+value
 def getHpyDTWsValue(sample, hypothesis):

@@ -1,6 +1,6 @@
 # PAC Learning of DOTAs
 
-Developer: [WeiShen](https://github.com/MrEnvision)    Last updated: 2020.04.26
+Developer: [WeiShen](https://github.com/MrEnvision)    Last updated: 2020.05.14
 
 ## Overview
 

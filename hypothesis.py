@@ -31,7 +31,7 @@ class OTA(object):
         print("SinkState: {}".format(self.sinkState))
         print("Transitions: ")
         for t in self.trans:
-            print(' ' + str(t.tranId), 'S_' + str(t.source), str(t.input), str(t.timeList), str(t.isReset), 'S_' + str(t.target), end="\n")
+            print(' ' + str(t.tranId), 'S_' + str(t.source), str(t.input), str(t.timePoint), str(t.isReset), 'S_' + str(t.target), end="\n")
 
     def showOTA(self):
         print("Input: " + str(self.inputs))
@@ -45,11 +45,11 @@ class OTA(object):
 
 
 class DiscreteOTATran(object):
-    def __init__(self, tranId, source, input, timeList, isReset, target):
+    def __init__(self, tranId, source, input, timePoint, isReset, target):
         self.tranId = tranId
         self.source = source
         self.input = input
-        self.timeList = timeList
+        self.timePoint = timePoint
         self.isReset = isReset
         self.target = target
 
@@ -79,11 +79,9 @@ class OTATran(object):
         return temp
 
 
-# 离散OTA构建
+# build DiscreteOTA (DFA)
 def structDiscreteOTA(table, inputs):
-    # input处理
     inputs = inputs
-    # states/initState/acceptStates处理
     states = []
     initState = None
     sinkState = None
@@ -99,7 +97,7 @@ def structDiscreteOTA(table, inputs):
             acceptStates.append(stateName)
         if s.valueList[0][0] == -1:
             sinkState = stateName
-    # trans处理
+    # deal with trans
     trans = []
     transNum = 0
     tableElements = [s for s in table.S] + [r for r in table.R]
@@ -118,34 +116,31 @@ def structDiscreteOTA(table, inputs):
                 target = valueList_name_dict[makeStr(element.valueList)]
         # 确认迁移input
         input = a.input
-        timeList = [a.time]
+        timePoint = a.time
         isReset = a.isReset
         # 添加新迁移还是添加时间点
         needNewTran = True
         for tran in trans:
             if source == tran.source and input == tran.input and target == tran.target and isReset == tran.isReset:
-                if timeList[0] not in tran.timeList:
-                    tran.timeList.append(timeList[0])
+                if timePoint == tran.timePoint:
                     needNewTran = False
-                else:
-                    needNewTran = False
-                break
+                    break
         if needNewTran:
-            tempTran = DiscreteOTATran(transNum, source, input, timeList, isReset, target)
+            tempTran = DiscreteOTATran(transNum, source, input, timePoint, isReset, target)
             trans.append(tempTran)
             transNum = transNum + 1
     discreteOTA = OTA(inputs, states, trans, initState, acceptStates, sinkState)
     return discreteOTA
 
 
-# 猜测OTA构建 - 边界值为具体测试过的值
+# build hypothesis
 def structHypothesisOTA(discreteOTA):
     inputs = discreteOTA.inputs
     states = discreteOTA.states
     initState = discreteOTA.initState
     acceptStates = discreteOTA.acceptStates
     sinkState = discreteOTA.sinkState
-    # 迁移处理
+    # deal with trans
     trans = []
     for s in discreteOTA.states:
         s_dict = {}
@@ -156,9 +151,8 @@ def structHypothesisOTA(discreteOTA):
                 for input in discreteOTA.inputs:
                     if tran.input == input:
                         tempList = s_dict[input]
-                        for i in tran.timeList:
-                            if i not in tempList:
-                                tempList.append(i)
+                        if tran.timePoint not in tempList:
+                            tempList.append(tran.timePoint)
                         s_dict[input] = tempList
         for value in s_dict.values():
             value.sort()
@@ -166,26 +160,24 @@ def structHypothesisOTA(discreteOTA):
             if tran.source == s:
                 timePoints = s_dict[tran.input]
                 guards = []
-                for tw in tran.timeList:
-                    index = timePoints.index(tw)
-                    if index + 1 < len(timePoints):
-                        if isInt(tw) and isInt(timePoints[index + 1]):
-                            tempGuard = timeInterval.Guard("[" + str(tw) + "," + str(timePoints[index + 1]) + ")")
-                        elif isInt(tw) and not isInt(timePoints[index + 1]):
-                            tempGuard = timeInterval.Guard("[" + str(tw) + "," + str(math.modf(timePoints[index + 1])[1]) + "]")
-                        elif not isInt(tw) and isInt(timePoints[index + 1]):
-                            tempGuard = timeInterval.Guard("(" + str(math.modf(tw)[1]) + "," + str(timePoints[index + 1]) + ")")
-                        else:
-                            tempGuard = timeInterval.Guard("(" + str(math.modf(tw)[1]) + "," + str(math.modf(timePoints[index + 1])[1]) + "]")
-                        guards.append(tempGuard)
+                tw = tran.timePoint
+                index = timePoints.index(tw)
+                if index + 1 < len(timePoints):
+                    if isInt(tw) and isInt(timePoints[index + 1]):
+                        tempGuard = timeInterval.Guard("[" + str(tw) + "," + str(timePoints[index + 1]) + ")")
+                    elif isInt(tw) and not isInt(timePoints[index + 1]):
+                        tempGuard = timeInterval.Guard("[" + str(tw) + "," + str(math.modf(timePoints[index + 1])[1]) + "]")
+                    elif not isInt(tw) and isInt(timePoints[index + 1]):
+                        tempGuard = timeInterval.Guard("(" + str(math.modf(tw)[1]) + "," + str(timePoints[index + 1]) + ")")
                     else:
-                        if isInt(tw):
-                            tempGuard = timeInterval.Guard("[" + str(tw) + ",+)")
-                        else:
-                            tempGuard = timeInterval.Guard("(" + str(math.modf(tw)[1]) + ",+)")
-                        guards.append(tempGuard)
-                guards = sortGuards(guards)
-                guards = simpleGuards(guards)
+                        tempGuard = timeInterval.Guard("(" + str(math.modf(tw)[1]) + "," + str(math.modf(timePoints[index + 1])[1]) + "]")
+                    guards.append(tempGuard)
+                else:
+                    if isInt(tw):
+                        tempGuard = timeInterval.Guard("[" + str(tw) + ",+)")
+                    else:
+                        tempGuard = timeInterval.Guard("(" + str(math.modf(tw)[1]) + ",+)")
+                    guards.append(tempGuard)
                 for guard in guards:
                     tempTran = OTATran(tran.tranId, tran.source, tran.input, [guard], tran.isReset, tran.target)
                     trans.append(tempTran)
@@ -193,12 +185,31 @@ def structHypothesisOTA(discreteOTA):
     return hypothesisOTA
 
 
-def sortGuards(guards):
-    for i in range(len(guards) - 1):
-        for j in range(len(guards) - i - 1):
-            if guards[j].min_bn > guards[j + 1].min_bn:
-                guards[j], guards[j + 1] = guards[j + 1], guards[j]
-    return guards
+# build simple hypothesis - merge guards
+def structSimpleHypothesis(hypothesis):
+    inputs = hypothesis.inputs
+    states = hypothesis.states
+    initState = hypothesis.initState
+    acceptStates = hypothesis.acceptStates
+    sinkState = hypothesis.sinkState
+    trans = []
+    tranNum = 0
+    for s in hypothesis.states:
+        for t in hypothesis.states:
+            for input in inputs:
+                for reset in [True, False]:
+                    temp = []
+                    for tran in hypothesis.trans:
+                        if tran.source == s and tran.input == input and tran.target == t and tran.isReset == reset:
+                            temp.append(tran)
+                    if temp:
+                        guards = []
+                        for i in temp:
+                            guards += i.guards
+                        guards = simpleGuards(guards)
+                        trans.append(OTATran(tranNum, s, input, guards, reset, t))
+                        tranNum += 1
+    return OTA(inputs, states, trans, initState, acceptStates, sinkState)
 
 
 # --------------------------------- 辅助函数 ---------------------------------

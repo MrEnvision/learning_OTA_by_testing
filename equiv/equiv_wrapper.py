@@ -1,47 +1,23 @@
-import os
+import copy
+from tester import testDTWs
+from timedWord import TimedWord
 from equiv import equivalence
 from equiv import ota as old_ota
 from equiv import interval as old_interval
 from system import buildSystem
-from comparator import buildCanonicalOTA
-from timedWord import TimedWord, ResetTimedWord
-from tester import testDTWs_2
+from hypothesis import OTA, OTATran
+import timeInterval as timeInterval
 
 
-def transform_system(system, name, flag):
-    """Transform system in learning_OTA_by_testing to system in equiv.
-    
+def hpyCompare(stableHpy, hypothesisOTA, upperGuard, targetSys, mqNum):
     """
-    locations = []
-    for loc in system.states:
-        is_init = (loc == system.initState)
-        is_accept = (loc in system.acceptStates)
-        is_sink = (loc == system.sinkState)
-        locations.append(old_ota.Location(loc, is_init, is_accept, flag, is_sink))
-
-    trans = []
-    for tran in system.trans:
-        constraints = []
-        for guard in tran.guards:
-            constraints.append(old_interval.Constraint(guard.guard))
-        trans.append(old_ota.OTATran(tran.tranId, tran.source, tran.input, constraints,
-                                     tran.isReset, tran.target, flag))
-
-    ota = old_ota.OTA(name, system.inputs, locations, trans, system.initState, system.acceptStates)
-    ota.sink_name = system.sinkState
-    return ota
-
-
-def hpyCompare(stableHpy, hypothesisOTA, upperGuard, targetSys, targetFullSys, mqNum):
-    """
-    stableHpy: old candidate automata
-    hypothesisOTA: new candidate automata
-    upperGuard: maximum time value
-    targetSys: teacher automata
-    targetFullSys: complete teacher automata
-    mqNum: number of membership queries
-    metric: distance between hypothesisOTA and targetSys
-
+        stableHpy: old candidate automata
+        hypothesisOTA: new candidate automata
+        upperGuard: maximum time value
+        targetSys: teacher automata
+        targetFullSys: complete teacher automata
+        mqNum: number of membership queries
+        metric: distance between hypothesisOTA and targetSys
     """
     # 第一次不进行比较
     if stableHpy is None:
@@ -56,19 +32,17 @@ def hpyCompare(stableHpy, hypothesisOTA, upperGuard, targetSys, targetFullSys, m
     # dtw_pos is accepted by sys2 but not sys.
     if not res:
         dtw_pos = equivalence.findDelayTimedwords(w_pos, 'q', sys2.sigma)
-        print('res', dtw_pos)
+        # print('res', dtw_pos)
 
     res2, w_neg = equivalence.ota_inclusion(int(max_time_value), sys2, sys)
     # dtw_neg is accepted by sys but not sys2.
     if not res2:
         dtw_neg = equivalence.findDelayTimedwords(w_neg, 's', sys.sigma)
-        print('res2', dtw_neg)
+        # print('res2', dtw_neg)
 
     if res and res2:
-        print('_____________________________')
-        stableHpy.showOTA()
-        print('_____________________________')
-        hypothesisOTA.showOTA()
+        # stableHpy.showOTA()
+        # hypothesisOTA.showOTA()
         raise NotImplementedError('hpyCompare should always find a difference')
 
     if res and not res2:
@@ -80,73 +54,136 @@ def hpyCompare(stableHpy, hypothesisOTA, upperGuard, targetSys, targetFullSys, m
     else:
         hpy_flag, ctx = 0, dtw_neg
 
-    # print('hpy_flag', hpy_flag)
-
     flag = True
     newCtx = []
     tempCtx = []
     for i in ctx:
         tempCtx.append(TimedWord(i.action, i.time))
-    realDRTWs, realValue = testDTWs_2(tempCtx, targetSys)
-    # if realValue != hpy_flag:
+    realDRTWs, realValue = testDTWs(tempCtx, targetSys)
     if (realValue == 1 and hpy_flag != 1) or (realValue != 1 and hpy_flag == 1):
-        # print('realValue', realValue)
-        # print('hpy_flag', hpy_flag)
         flag = False
         newCtx = realDRTWs
-
     return flag, newCtx, mqNum + 1
 
 
-# 假设下输入DTWs，获得DRTWs+value
-def getHpyDTWsValue_2(sample, teacher):
-    DRTWs = []
-    nowTime = 0
-    curState = teacher.initState
-    for dtw in sample:
-        if curState == teacher.sinkState:
-            DRTWs.append(ResetTimedWord(dtw.input, dtw.time, True))
-        else:
-            time = dtw.time + nowTime
-            newLTW = TimedWord(dtw.input, time)
-            for tran in teacher.trans:
-                if tran.source == curState and tran.isPass(newLTW):
-                    curState = tran.target
-                    if tran.isReset:
-                        nowTime = 0
-                        isReset = True
-                    else:
-                        nowTime = time
-                        isReset = False
-                    DRTWs.append(ResetTimedWord(dtw.input, dtw.time, isReset))
-                    break
-    if curState in teacher.acceptStates:
-        value = 1
-    elif curState == teacher.sinkState:
-        value = -1
-    else:
-        value = 0
-    return DRTWs, value
+def transform_system(system, name, flag):
+    """
+        Transform system in learning_OTA_by_testing to system in equiv.
+    """
+    locations = []
+    for loc in system.states:
+        is_init = (loc == system.initState)
+        is_accept = (loc in system.acceptStates)
+        is_sink = (loc == system.sinkState)
+        locations.append(old_ota.Location(loc, is_init, is_accept, flag, is_sink))
+
+    trans = []
+    for tran in system.trans:
+        constraints = []
+        for guard in tran.guards:
+            constraints.append(old_interval.Constraint(guard.guard))
+        trans.append(old_ota.OTATran(tran.tranId, tran.source, tran.input, constraints, tran.isReset, tran.target, flag))
+
+    ota = old_ota.OTA(name, system.inputs, locations, trans, system.initState, system.acceptStates)
+    ota.sink_name = system.sinkState
+    return ota
+
+
+# 补全targetSys
+def buildCanonicalOTA(targetSys):
+    inputs = targetSys.inputs
+    states = targetSys.states
+    trans = targetSys.trans
+    initState = targetSys.initState
+    acceptStates = targetSys.acceptStates
+
+    sinkFlag = False
+    newTrans = []
+    sinkState = None
+    tranNumber = len(targetSys.trans)
+
+    for state in targetSys.states:
+        guardDict = {}
+        for input in inputs:
+            guardDict[input] = []
+        for tran in trans:
+            if tran.source == state:
+                for input in inputs:
+                    if tran.input == input:
+                        for guard in tran.guards:
+                            guardDict[input].append(guard)
+        for key, value in guardDict.items():
+            if len(value) > 0:
+                addGuards = complementIntervals(value)
+            else:
+                addGuards = [timeInterval.Guard('[0,+)')]
+            if len(addGuards) > 0:
+                sinkState = 'sink'
+                sinkFlag = True
+                for guard in addGuards:
+                    tempTran = OTATran(tranNumber, state, key, [guard], True, sinkState)
+                    tranNumber = tranNumber + 1
+                    newTrans.append(tempTran)
+    if sinkFlag:
+        states.append(sinkState)
+        for tran in newTrans:
+            trans.append(tran)
+        for input in inputs:
+            guards = [timeInterval.Guard('[0,+)')]
+            tempTran = OTATran(tranNumber, sinkState, input, guards, True, sinkState)
+            tranNumber = tranNumber + 1
+            trans.append(tempTran)
+    newOTA = OTA(inputs, states, trans, initState, acceptStates, sinkState)
+    return newOTA
+
+
+# 补全区间
+def complementIntervals(guards):
+    partitions = []
+    key = []
+    floor_bn = timeInterval.BracketNum('0', timeInterval.Bracket.LC)
+    ceil_bn = timeInterval.BracketNum('+', timeInterval.Bracket.RO)
+    for guard in guards:
+        min_bn = guard.min_bn
+        max_bn = guard.max_bn
+        if min_bn not in key:
+            key.append(min_bn)
+        if max_bn not in key:
+            key.append(max_bn)
+    copyKey = copy.deepcopy(key)
+    for bn in copyKey:
+        complement = bn.complement()
+        if complement not in copyKey:
+            copyKey.append(complement)
+    if floor_bn not in copyKey:
+        copyKey.insert(0, floor_bn)
+    if ceil_bn not in copyKey:
+        copyKey.append(ceil_bn)
+    copyKey.sort()
+    for index in range(len(copyKey)):
+        if index % 2 == 0:
+            tempGuard = timeInterval.Guard(copyKey[index].getBN() + ',' + copyKey[index + 1].getBN())
+            partitions.append(tempGuard)
+    for g in guards:
+        if g in partitions:
+            partitions.remove(g)
+    return partitions
 
 
 if __name__ == "__main__":
-    experiments_path = os.getcwd() + '/Automata/'
-    # experiments_path = '../Automata/'
+    experiments_path = '../Automata/'
+
     A = buildSystem(experiments_path + 'example3.json')
     AA = buildCanonicalOTA(A)
-
     sys = transform_system(AA, "A", "s")
     sys.show()
 
     H = buildSystem(experiments_path + 'example3_1.json')
     HH = buildCanonicalOTA(H)
-
     sys2 = transform_system(HH, "B", "q")
     sys2.show()
 
     max_time_value = 20
-
-    # hpyCompare(AA, HH, max_time_value, None, None, 0, 0.0)
 
     res, w_pos = equivalence.ota_inclusion(max_time_value, sys, sys2)
     # drtw_pos is accepted by sys2 but not sys.
@@ -161,9 +198,7 @@ if __name__ == "__main__":
         print('res2', dtw_neg)
 
     print(res)
-    # print(drtw_pos)
     print(res2)
-    # print(drtw_pos2)
 
     if res and not res2:
         hpy_flag = 0
@@ -175,11 +210,3 @@ if __name__ == "__main__":
         hpy_flag = 0
 
     print(hpy_flag)
-
-    print('_____________________________')
-    dtws = [TimedWord('a', 2.1), TimedWord('b', 2.1),TimedWord('b', 1.1),TimedWord('a', 0.1),TimedWord('b', 2.1)]
-    realDRTWs1, realValue1 = getHpyDTWsValue_2(dtws, AA)
-    realDRTWs2, realValue2 = getHpyDTWsValue_2(dtws, HH)
-    print([i.show() for i in dtws])
-    print(realValue1)
-    print(realValue2)

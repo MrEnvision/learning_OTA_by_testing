@@ -1,5 +1,5 @@
 from system import systemOutput, systemTest
-from timedWord import TimedWord, ResetTimedWord, DRTW_to_LRTW
+from timedWord import TimedWord, ResetTimedWord
 
 
 # logical-timed test，无效或sink即终止，并补全
@@ -22,7 +22,7 @@ def testLTWs(LTWs, targetSys):
                 break
             else:
                 DTW = TimedWord(ltw.input, ltw.time - nowTime)
-                curState, value, resetFlag = systemTest(DTW, nowTime, curState, targetSys)
+                curState, value, resetFlag = systemOutput(DTW, nowTime, curState, targetSys)
                 if resetFlag:
                     LRTWs.append(ResetTimedWord(ltw.input, ltw.time, True))
                     nowTime = 0
@@ -40,14 +40,7 @@ def testLTWs(LTWs, targetSys):
         return LRTWs, value
 
 
-# delay-timed test
-def testDTWs(DTWs, targetSys):
-    DRTWs, value = systemOutput(DTWs, targetSys)
-    LRTWs = DRTW_to_LRTW(DRTWs)
-    return LRTWs, value
-
-
 # delay-timed test - 输入DTWs，返回DRTWs
-def testDTWs_2(DTWs, targetSys):
-    DRTWs, value = systemOutput(DTWs, targetSys)
+def testDTWs(DTWs, targetSys):
+    DRTWs, value = systemTest(DTWs, targetSys)
     return DRTWs, value
