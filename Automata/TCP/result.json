@@ -1,10 +1,10 @@
 {
   "1": {
     "result": "Success",
-    "time": 242.98018193244934,
-    "mqNum": 1534,
-    "eqNum": 22,
-    "testNum": 42651,
-    "passingRate": 1.0
+    "time": 19.313514947891235,
+    "mqNum": 212,
+    "eqNum": 8,
+    "testNum": 27532,
+    "passingRate": 0.9994915007990701
   }
 }

@@ -33,11 +33,18 @@ def EQs(hypothesis, upperGuard, epsilon, delta, stateNum, targetSys, eqNum, test
                 ctx = realDRTWs
                 break
             else:
+                i -= 1
                 continue
         elif (realValue == 1 and value != 1) or (realValue != 1 and value == 1):
             flag = False
             ctx = realDRTWs
             break
+        # if realValue == -1:
+        #     continue
+        # elif (realValue == 1 and value != 1) or (realValue != 1 and value == 1):
+        #     flag = False
+        #     ctx = realDRTWs
+        #     break
     print('# test to sink State: ', toSinkCount, ' testNum of current EQ: ', i)
     return flag, ctx, testNum
 
@@ -45,7 +52,8 @@ def EQs(hypothesis, upperGuard, epsilon, delta, stateNum, targetSys, eqNum, test
 # 根据设定的分布随机采样 - PAC采样
 def sampleGeneration(inputs, upperGuard, stateNum, targetSys):
     sample = []
-    length = random.randint(1, stateNum * 2)
+    # length = random.randint(1, stateNum * 2)
+    length = random.randint(1, math.ceil(stateNum * 1.2))
     dic = targetSys.getInputsDic()
 
     curState = targetSys.initState
@@ -72,22 +80,7 @@ def sampleGeneration(inputs, upperGuard, stateNum, targetSys):
     return sample
 
 
-def sampleGeneration_old_1(inputs, upperGuard, stateNum):
-    sample = []
-    length = math.ceil(random.gauss(stateNum, stateNum / 2))
-    while length < 0:
-        length = math.ceil(random.gauss(stateNum, stateNum / 2))
-    for i in range(length):
-        input = inputs[random.randint(0, len(inputs) - 1)]
-        time = random.randint(0, upperGuard * 3) / 2
-        if time > upperGuard:
-            time = upperGuard
-        temp = TimedWord(input, time)
-        sample.append(temp)
-    return sample
-
-
-def sampleGeneration_old_2(inputs, upperGuard, stateNum):
+def sampleGeneration_old_3(inputs, upperGuard, stateNum, targetSys):
     sample = []
     length = random.randint(1, stateNum * 2)
     for i in range(length):
@@ -97,6 +90,21 @@ def sampleGeneration_old_2(inputs, upperGuard, stateNum):
             time = time // 2
         else:
             time = time // 2 + 0.1
+        temp = TimedWord(input, time)
+        sample.append(temp)
+    return sample
+
+
+def sampleGeneration_old_1(inputs, upperGuard, stateNum, targetSys):
+    sample = []
+    length = math.ceil(random.gauss(stateNum, stateNum / 2))
+    while length < 0:
+        length = math.ceil(random.gauss(stateNum, stateNum / 2))
+    for i in range(length):
+        input = inputs[random.randint(0, len(inputs) - 1)]
+        time = random.randint(0, upperGuard * 3) / 2
+        if time > upperGuard:
+            time = upperGuard
         temp = TimedWord(input, time)
         sample.append(temp)
     return sample

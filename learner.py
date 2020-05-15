@@ -1,6 +1,7 @@
 import copy
 import obsTable
-from teacher import EQs
+# from teacher import EQs
+from new_EQs import EQs
 from hypothesis import structDiscreteOTA, structHypothesisOTA
 import equiv.equiv_wrapper as equiv_wrapper
 
@@ -64,6 +65,8 @@ def learnOTA(targetSys, inputs, upperGuard, epsilon, delta, stateNum, debugFlag)
         else:
             if debugFlag:
                 print("Comparator找到反例！！！")
+
+            print("Comparator找到反例！！！")
             equivalent = False
 
         if not equivalent:

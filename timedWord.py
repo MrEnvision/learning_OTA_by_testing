@@ -9,6 +9,9 @@ class TimedWord(object):
         else:
             return False
 
+    def __lt__(self, other):
+        return (self.time, self.input) < (other.time, other.input)
+
     def show(self):
         return "(" + self.input + "," + str(self.time) + ")"
 

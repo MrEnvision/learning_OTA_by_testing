@@ -77,6 +77,43 @@ class Letterword(object):
         return self.show()
 
 
+class Element(object):
+    """The definition of the element in OTA observation table.
+    """
+
+    def __init__(self, tws=[], value=[], suffixes_resets=[]):
+        self.tws = tws or []
+        self.value = value or []
+        self.suffixes_resets = suffixes_resets or []
+
+    def __eq__(self, element):
+        if self.tws == element.tws and self.value == element.value:
+            return True
+        else:
+            return False
+
+    def get_tws_e(self, e):
+        tws_e = [tw for tw in self.tws]
+        if len(e) == 0:
+            return tws_e
+        else:
+            for tw in e:
+                tws_e.append(tw)
+            return tws_e
+
+    def row(self):
+        return self.value
+
+    def whichstate(self):
+        state_name = ""
+        for v in self.value:
+            state_name = state_name + str(v)
+        return state_name
+
+    def show(self):
+        return [tw.show() for tw in self.tws], self.value, self.suffixes_resets
+
+
 def ota_inclusion(max_time_value, A, B):
     """
         Determine whether L(B) is a subset of L(A).
@@ -373,3 +410,28 @@ def minnum_in_region(constraint):
         return int(constraint.min_value)
     else:
         return float(constraint.min_value + '.1')
+
+
+def equivalence_query_normal(max_time_value, teacher, hypothesis, prev_ctx=None):
+    """Normal teacher
+    """
+    if prev_ctx is not None:
+        for ctx in prev_ctx:
+            teacher_res = teacher.is_accepted_delay(ctx.tws)
+            hypothesis_res = hypothesis.is_accepted_delay(ctx.tws)
+            if teacher_res != hypothesis_res and hypothesis_res != -2:
+                return False, ctx
+
+    flag_pos, w_pos = ota_inclusion(max_time_value, hypothesis, teacher)
+    if flag_pos == False:
+        dtw_pos = findDelayTimedwords(w_pos, 's', teacher.sigma)
+        ctx_pos = Element(dtw_pos, [])
+        return False, ctx_pos
+    else:
+        flag_neg, w_neg = ota_inclusion(max_time_value, teacher, hypothesis)
+        if flag_neg == False:
+            dtw_neg = findDelayTimedwords(w_neg, 's', teacher.sigma)
+            ctx_neg = Element(dtw_neg, [])
+            return False, ctx_neg
+        else:
+            return True, None

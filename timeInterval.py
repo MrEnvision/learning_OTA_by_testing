@@ -96,6 +96,12 @@ class Guard:
         self.max_value = max_type[:-1].strip()
         self.max_bn = BracketNum(self.max_value, max_bn_bracket)
 
+    def isEmpty(self):
+        if self.max_bn < self.min_bn:
+            return True
+        else:
+            return False
+
     def __eq__(self, constraint):
         if self.min_value == constraint.min_value and self.closed_min == constraint.closed_min and self.max_value == constraint.max_value and self.closed_max == constraint.closed_max:
             return True

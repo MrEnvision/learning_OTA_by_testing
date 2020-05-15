@@ -2,138 +2,74 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09576ac5-b64e-4b07-9ddd-b5edc877689b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Automata/TCP/result.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/learnedSys0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/learnedSys0.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Automata/TCP/results/目标系统.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Envision.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Envision.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/10_2_5_2-1/10_2_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/10_2_5_2-1/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/10_2_5_2-1/result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/10_2_5_2-1/result_0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/10_2_5_2-1/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/10_2_5_2-1/results/learnedSys0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/10_2_5_2-1/results/learnedSys0.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/10_2_5_2-1/results/目标系统" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/10_2_5_2-1/results/目标系统.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/4_10_5_2-1/4_10_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/4_10_5_2-1/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/4_10_5_2-1/result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/4_10_5_2-1/result_0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/4_10_5_2-1/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/4_10_5_2-1/results/目标系统" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/4_10_5_2-1/results/目标系统.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/4_4_5_2-1/4_4_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/4_4_5_2-1/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/4_4_5_2-1/result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/4_4_5_2-1/results/learnedSys0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/4_4_5_2-1/results/learnedSys0.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/4_6_5_2-2/4_6_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/4_6_5_2-2/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/4_6_5_2-2/result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/4_6_5_2-2/result_0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/4_6_5_2-2/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/6_2_5_2-1/6_2_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/6_2_5_2-1/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/6_2_5_2-1/result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/8_2_5_2-1/8_2_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/8_2_5_2-1/precondition.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/8_2_5_2-1/result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/8_2_5_2-1/result_0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/8_2_5_2-1/result_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/8_2_5_2-1/results/learnedSys0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/8_2_5_2-1/results/learnedSys0.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/8_2_5_2-1/results/目标系统" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/8_2_5_2-1/results/目标系统.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results_1/learnedSys0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results_1/learnedSys0.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results_1/learnedSys1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results_1/learnedSys1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results_1/learnedSys3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results_1/learnedSys3.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results_1/learnedSys4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results_1/learnedSys4.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results_1/learnedSys5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results_1/learnedSys5.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results_1/result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results_1/目标系统" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results_1/目标系统.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results_2/learnedSys0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results_2/learnedSys0.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results_2/result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results_2/目标系统" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata/TCP/results_2/目标系统.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new_EQs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Automata/example1_1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Automata/example1_2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comparator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataStatistics.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equiv/equiv_wrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/equiv/equiv_wrapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Automata/TCP/result.json" beforeDir="false" afterPath="$PROJECT_DIR$/Automata/TCP/result.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Automata/TCP/results/learnedSys0" beforeDir="false" afterPath="$PROJECT_DIR$/Automata/TCP/results/learnedSys0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Automata/TCP/results/learnedSys0.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Automata/TCP/results/learnedSys0.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Automata/TCP/results/目标系统.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Automata/TCP/results/目标系统.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equiv/equivalence.py" beforeDir="false" afterPath="$PROJECT_DIR$/equiv/equivalence.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equiv/otatable.py" beforeDir="false" afterPath="$PROJECT_DIR$/equiv/otatable.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hypothesis.py" beforeDir="false" afterPath="$PROJECT_DIR$/hypothesis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/example.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/example.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/learner.py" beforeDir="false" afterPath="$PROJECT_DIR$/learner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obsTable.py" beforeDir="false" afterPath="$PROJECT_DIR$/obsTable.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system.py" beforeDir="false" afterPath="$PROJECT_DIR$/system.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/teacher.py" beforeDir="false" afterPath="$PROJECT_DIR$/teacher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/TCP/example.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/TCP/precondition.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/TCP/result_2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/TCP/results/猜想系统" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/TCP/results/猜想系统.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/TCP/results/目标系统" beforeDir="false" afterPath="$PROJECT_DIR$/Automata/TCP/results/目标系统" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/TCP/results/目标系统.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/dataStatistics.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_1_2/example.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_1_2/precondition.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_1_2/result_1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_1_2/result_2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_2_4/example.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_2_4/precondition.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_2_4/result_1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_2_4/result_2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_3_6/example.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_3_6/precondition.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_3_6/result_1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_3_6/result_2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_4_8/example.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_4_8/precondition.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_4_8/result_1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_4_8/result_2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_5_10/example.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_5_10/precondition.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_5_10/result_1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_5_10/result_2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_5_10/results/目标系统" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_5_10/results/目标系统.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_6_12/example.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_6_12/precondition.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_6_12/result_1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_6_12/result_2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_7_14/example.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_7_14/precondition.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_7_14/result_1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_7_14/result_2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_8_16/example.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_8_16/precondition.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_8_16/result_1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_8_16/result_2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_9_18/example.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_9_18/precondition.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_9_18/result_1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_9_18/result_2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_9_18/results/目标系统" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/evaluateComparator/test_9_18/results/目标系统.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/Automata/generator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/comparator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/hypothesis.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/learner.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/makePic.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/obsTable.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/system.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/teacher.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/tester.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/timeInterval.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_0版本/timedWord.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/example.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/precondition.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_0.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/猜想系统_4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/目标系统" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/Automata/TCP/results/目标系统.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/comparator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/error.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/hypothesis.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/learner.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/makePic.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/obsTable.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/system.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/teacher.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/tester.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/timeInterval.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/1_1版本/timedWord.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/comparator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/dataStatistics.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/equiv/equiv_wrapper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/equiv/equivalence.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/equiv/interval.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/equiv/ota.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/equiv/otatable.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/error.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/hypothesis.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/learner.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/makePic.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/obsTable.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/system.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/teacher.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/tester.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/timeInterval.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/2_0版本/timedWord.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timeInterval.py" beforeDir="false" afterPath="$PROJECT_DIR$/timeInterval.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timedWord.py" beforeDir="false" afterPath="$PROJECT_DIR$/timedWord.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/validate.py" beforeDir="false" afterPath="$PROJECT_DIR$/validate.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -166,7 +102,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Automata" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -177,17 +113,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Automata" />
       <recent name="$PROJECT_DIR$/img" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/equiv" />
-      <recent name="$PROJECT_DIR$/Automata" />
       <recent name="$PROJECT_DIR$/4_6_5_2-4" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Automata/TCP/results" />
+      <recent name="$PROJECT_DIR$/Automata/TCP" />
       <recent name="$PROJECT_DIR$/Results" />
       <recent name="$PROJECT_DIR$/Automata" />
       <recent name="$PROJECT_DIR$/Experiments/experiment_action" />
-      <recent name="$PROJECT_DIR$/Experiments/TCP" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
@@ -213,7 +150,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="equiv_wrapper" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="demo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PACLearning_OTA_by_testing" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -221,34 +158,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/equiv" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/equiv/equiv_wrapper.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="generator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PACLearning_OTA_by_testing" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Automata" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Automata/generator.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -301,13 +216,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="new_EQs" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PACLearning_OTA_by_testing" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/new_EQs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.new_EQs" />
+        <item itemvalue="Python.demo" />
         <item itemvalue="Python.dataStatistics" />
         <item itemvalue="Python.main_without_comparator" />
-        <item itemvalue="Python.generator" />
-        <item itemvalue="Python.equiv_wrapper" />
       </list>
     </recent_temporary>
   </component>
@@ -336,6 +273,8 @@
       <workItem from="1589374443578" duration="2115000" />
       <workItem from="1589439931482" duration="187000" />
       <workItem from="1589441308996" duration="8228000" />
+      <workItem from="1589507059444" duration="3479000" />
+      <workItem from="1589522545943" duration="10754000" />
     </task>
     <task id="LOCAL-00001" summary="commit tool 1.0.0">
       <created>1587905904474</created>
@@ -400,45 +339,45 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="419" y="30" key="Github.UntrackedFilesDialog/0.0.1280.800@0.0.1280.800" timestamp="1587904984396" />
-    <state width="1238" height="268" key="GridCell.Tab.0.bottom" timestamp="1589448991632">
+    <state width="1238" height="182" key="GridCell.Tab.0.bottom" timestamp="1589549496006">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="268" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1589448991632" />
+    <state width="1238" height="182" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1589549496006" />
     <state width="1238" height="379" key="GridCell.Tab.0.bottom/0.23.1280.726@0.23.1280.726" timestamp="1589374121786" />
-    <state width="1238" height="268" key="GridCell.Tab.0.center" timestamp="1589448991631">
+    <state width="1238" height="182" key="GridCell.Tab.0.center" timestamp="1589549496004">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="268" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1589448991631" />
+    <state width="1238" height="182" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1589549496004" />
     <state width="1238" height="379" key="GridCell.Tab.0.center/0.23.1280.726@0.23.1280.726" timestamp="1589374121785" />
-    <state width="1238" height="268" key="GridCell.Tab.0.left" timestamp="1589448991630">
+    <state width="1238" height="182" key="GridCell.Tab.0.left" timestamp="1589549495996">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="268" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1589448991630" />
+    <state width="1238" height="182" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1589549495996" />
     <state width="1238" height="379" key="GridCell.Tab.0.left/0.23.1280.726@0.23.1280.726" timestamp="1589374121785" />
-    <state width="1238" height="268" key="GridCell.Tab.0.right" timestamp="1589448991632">
+    <state width="1238" height="182" key="GridCell.Tab.0.right" timestamp="1589549496005">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="268" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1589448991632" />
+    <state width="1238" height="182" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1589549496005" />
     <state width="1238" height="379" key="GridCell.Tab.0.right/0.23.1280.726@0.23.1280.726" timestamp="1589374121786" />
-    <state width="1238" height="323" key="GridCell.Tab.1.bottom" timestamp="1589366417680">
+    <state width="1238" height="222" key="GridCell.Tab.1.bottom" timestamp="1589529686022">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="323" key="GridCell.Tab.1.bottom/0.0.1280.800@0.0.1280.800" timestamp="1589366417680" />
+    <state width="1238" height="222" key="GridCell.Tab.1.bottom/0.0.1280.800@0.0.1280.800" timestamp="1589529686022" />
     <state width="1238" height="93" key="GridCell.Tab.1.bottom/0.23.1280.726@0.23.1280.726" timestamp="1589264665562" />
-    <state width="1238" height="323" key="GridCell.Tab.1.center" timestamp="1589366417679">
+    <state width="1238" height="222" key="GridCell.Tab.1.center" timestamp="1589529686020">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="323" key="GridCell.Tab.1.center/0.0.1280.800@0.0.1280.800" timestamp="1589366417679" />
+    <state width="1238" height="222" key="GridCell.Tab.1.center/0.0.1280.800@0.0.1280.800" timestamp="1589529686020" />
     <state width="1238" height="93" key="GridCell.Tab.1.center/0.23.1280.726@0.23.1280.726" timestamp="1589264665561" />
-    <state width="1238" height="323" key="GridCell.Tab.1.left" timestamp="1589366417679">
+    <state width="1238" height="222" key="GridCell.Tab.1.left" timestamp="1589529686019">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="323" key="GridCell.Tab.1.left/0.0.1280.800@0.0.1280.800" timestamp="1589366417679" />
+    <state width="1238" height="222" key="GridCell.Tab.1.left/0.0.1280.800@0.0.1280.800" timestamp="1589529686019" />
     <state width="1238" height="93" key="GridCell.Tab.1.left/0.23.1280.726@0.23.1280.726" timestamp="1589264665560" />
-    <state width="1238" height="323" key="GridCell.Tab.1.right" timestamp="1589366417680">
+    <state width="1238" height="222" key="GridCell.Tab.1.right" timestamp="1589529686021">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="323" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1589366417680" />
+    <state width="1238" height="222" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1589529686021" />
     <state width="1238" height="93" key="GridCell.Tab.1.right/0.23.1280.726@0.23.1280.726" timestamp="1589264665561" />
     <state x="141" y="39" key="SettingsEditor" timestamp="1589085504909">
       <screen x="0" y="0" width="1280" height="800" />
@@ -456,10 +395,11 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/learning_OTA_by_testing$generator.coverage" NAME="generator Coverage Results" MODIFIED="1589366601335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automata" />
-    <SUITE FILE_PATH="coverage/learning_OTA_by_testing$main.coverage" NAME="main Coverage Results" MODIFIED="1589448589668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/learning_OTA_by_testing$demo.coverage" NAME="demo Coverage Results" MODIFIED="1589266445208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/learning_OTA_by_testing$main.coverage" NAME="main Coverage Results" MODIFIED="1589549495986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/learning_OTA_by_testing$demo.coverage" NAME="demo Coverage Results" MODIFIED="1589528890538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/learning_OTA_by_testing$equiv_wrapper.coverage" NAME="equiv_wrapper Coverage Results" MODIFIED="1589333885522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/equiv" />
     <SUITE FILE_PATH="coverage/learning_OTA_by_testing$main_without_comparator.coverage" NAME="main_without_comparator Coverage Results" MODIFIED="1589367569511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/learning_OTA_by_testing$dataStatistics.coverage" NAME="dataStatistics Coverage Results" MODIFIED="1589373140433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/learning_OTA_by_testing$new_EQs.coverage" NAME="new_EQs Coverage Results" MODIFIED="1589529279345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
