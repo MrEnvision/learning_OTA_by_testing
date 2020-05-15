@@ -2,6 +2,6 @@
   "inputs": ["a", "b", "c", "d"],
   "upperGuard": 5,
   "stateNum": 5,
-  "epsilon": 0.01,
-  "delta": 0.01
+  "epsilon": 0.001,
+  "delta": 0.001
 }

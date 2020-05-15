@@ -1,5 +1,6 @@
 import json
 import time
+import random
 from system import buildSystem
 from learner import learnOTA
 from makePic import makeOTA, makeLearnedOTA
@@ -53,6 +54,7 @@ def main():
 
 
 if __name__ == '__main__':
+    random.seed(1)
     # file directory
     filePath = "Automata/TCP"
     # target model file

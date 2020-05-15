@@ -95,7 +95,7 @@ def minimizeCounterexample(teacher, hypothesis, sample):
                 dtw.append(TimedWord(ltw[i].input, round1(ltw[i].time - ltw[i - 1].time)))
         return dtw
 
-    # print('initial:', [i.show() for i in ltw_to_dtw(ltw)])
+    print('initial:', [i.show() for i in ltw_to_dtw(ltw)])
     for i in range(len(ltw)):
         while True:
             if i == 0 or reset[i - 1]:
@@ -217,10 +217,22 @@ def sampleGeneration_valid(teacher, upperGuard, length):
 
     return dtw
 
+def sampleGeneration_invalid(teacher, upperGuard, length):
+    assert length > 0
+    sample_prefix = None
+    while sample_prefix is None:
+        sample_prefix = sampleGeneration_valid(teacher, upperGuard, length-1)
+    action = random.choice(teacher.inputs)
+    time = random.randint(0, upperGuard * 2 + 1)
+    if time % 2 == 0:
+        time = time // 2
+    else:
+        time = time // 2 + 0.1
+    return sample_prefix + [TimedWord(action, time)]
 
 def sampleGeneration2(teacher, upperGuard, length):
     if random.randint(0, 1) == 0:
-        return sampleGeneration(teacher.inputs, upperGuard, len(teacher.states), length)
+        return sampleGeneration_invalid(teacher, upperGuard, length)
     else:
         sample = None
         while sample is None:
@@ -231,7 +243,7 @@ def sampleGeneration2(teacher, upperGuard, length):
 def EQs(hypothesis, upperGuard, epsilon, delta, stateNum, targetSys, eqNum, testNum):
     testSum = int((math.log(1 / delta) + math.log(2) * (eqNum + 1)) / epsilon)
     # print(testNum)
-    for length in range(1, stateNum + 2):
+    for length in range(1, math.ceil(stateNum * 1.7)):
         ctx = None
         correct = 0
         i = 0
@@ -241,7 +253,7 @@ def EQs(hypothesis, upperGuard, epsilon, delta, stateNum, targetSys, eqNum, test
             testNum += 1
             # Generate sample (delay-timed word) according to fixed distribution
             # sample = sampleGeneration(hypothesis.sigma, upperGuard, stateNum, length=length)
-            sample = sampleGeneration2(hypothesis, upperGuard, length)
+            sample = sampleGeneration2(targetSys, upperGuard, length)
 
             # Compare the results
             if isCounterexample(targetSys, hypothesis, sample):
