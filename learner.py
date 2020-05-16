@@ -63,9 +63,6 @@ def learnOTA(targetSys, inputs, upperGuard, epsilon, delta, stateNum, debugFlag)
             eqNum = eqNum + 1
             stableHpy = copy.deepcopy(hypothesisOTA)
         else:
-            if debugFlag:
-                print("Comparator found a counterexample!!!")
-
             print("Comparator found a counterexample!!!")
             equivalent = False
 

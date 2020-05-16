@@ -8,7 +8,12 @@ from equiv.equiv_wrapper import buildCanonicalOTA, transform_system
 from equiv.equivalence import equivalence_query_normal
 
 
-def validate(learnedSys, targetSys, upperGuard, stateNum, testNum):
+def validate(learnedSys, targetSys, upperGuard, stateNum, eqNum, delta, epsilon):
+    flag = False
+    testNum = int((math.log(1 / delta) + math.log(2) * (eqNum + 1)) / epsilon)
+    if testNum < 20000:
+        testNum = 20000
+
     A = copy.deepcopy(targetSys)
     AA = buildCanonicalOTA(A)
     sys = transform_system(AA, "A", "s")
@@ -17,9 +22,9 @@ def validate(learnedSys, targetSys, upperGuard, stateNum, testNum):
 
     equivalent, _ = equivalence_query_normal(AA.max_time_value(), sys, sys2)
     if equivalent:
+        flag = True
         print("Completely correct!")
-        return 1.0
-
+        return flag, 1.0
 
     failNum = 0
     print('Start validation')
@@ -27,7 +32,7 @@ def validate(learnedSys, targetSys, upperGuard, stateNum, testNum):
         if i % 1000 == 0:
             print(i, 'of', testNum)
         # sample = sampleGeneration(learnedSys.inputs, upperGuard, stateNum, targetSys)
-        l = random.randint(1, math.ceil(stateNum * 1.7))
+        l = random.randint(1, math.ceil(stateNum * 1.5))
         sample = sampleGeneration2(targetSys, upperGuard, l)
         DRTWs, value = getHpyDTWsValue(sample, learnedSys)
         realDRTWs, realValue = testDTWs(sample, targetSys)
@@ -37,4 +42,4 @@ def validate(learnedSys, targetSys, upperGuard, stateNum, testNum):
         #     failNum += 1
         # else:
         #     passNum += 1
-    return (testNum - failNum) / testNum
+    return flag, (testNum - failNum) / testNum

@@ -2,8 +2,9 @@ import math
 import copy
 import random
 from tester import testDTWs
-from timedWord import TimedWord
+from timedWord import TimedWord, DRTW_to_LRTW, LRTW_to_LTW
 from teacher import getHpyDTWsValue
+# import makePic
 
 
 def min_constraint_double(c):
@@ -70,22 +71,37 @@ def minimizeCounterexample(teacher, hypothesis, sample):
             return round1(x - 0.9)
 
     # Find sequence of reset information
-    for tw in sample:
-        current_clock = round1(current_clock + tw.time)
-        ltw.append(TimedWord(tw.input, current_clock))
-        for tran in hypothesis.trans:
-            found = False
-            if current_state == tran.source and tran.isPass(TimedWord(tw.input, current_clock)):
-                reset.append(tran.isReset)
-                current_state = tran.target
-                if tran.isReset:
-                    current_clock = 0
-                found = True
-                break
-        assert found
+    realDRTWs, realValue = testDTWs(sample, teacher)
+    ltw = LRTW_to_LTW(DRTW_to_LRTW(realDRTWs))
+    for i in realDRTWs:
+        reset.append(i.isReset)
+    # for tw in sample:
+    #     current_clock = round1(current_clock + tw.time)
+    #     ltw.append(TimedWord(tw.input, current_clock))
+    #     for tran in hypothesis.trans:
+    #         found = False
+    #         if current_state == tran.source and tran.isPass(TimedWord(tw.input, current_clock)):
+    #             reset.append(tran.isReset)
+    #             current_state = tran.target
+    #             if tran.isReset:
+    #                 current_clock = 0
+    #             found = True
+    #             break
+    #     assert found
 
-    # print('ltw:', ltw)
+    def normalize(trace):
+        newTrace = []
+        for i in trace:
+            if math.modf(float(i.time))[0] == 0.0:
+                time = math.modf(float(i.time))[1]
+            else:
+                time = math.modf(float(i.time))[1] + 0.1
+            newTrace.append(TimedWord(i.input, time))
+        return newTrace
 
+    ltw = normalize(ltw)
+
+    # print('ltw:', [i.show() for i in ltw])
     def ltw_to_dtw(ltw):
         dtw = []
         for i in range(len(ltw)):
@@ -95,7 +111,8 @@ def minimizeCounterexample(teacher, hypothesis, sample):
                 dtw.append(TimedWord(ltw[i].input, round1(ltw[i].time - ltw[i - 1].time)))
         return dtw
 
-    print('initial:', [i.show() for i in ltw_to_dtw(ltw)])
+    # print('initial:', [i.show() for i in ltw_to_dtw(ltw)])
+
     for i in range(len(ltw)):
         while True:
             if i == 0 or reset[i - 1]:
@@ -108,9 +125,9 @@ def minimizeCounterexample(teacher, hypothesis, sample):
             ltw2[i] = TimedWord(ltw[i].input, one_lower(ltw[i].time))
             if not isCounterexample(teacher, hypothesis, ltw_to_dtw(ltw2)):
                 break
-            ltw = ltw2
+            ltw = copy.deepcopy(ltw2)
 
-    print('final:', [i.show() for i in ltw_to_dtw(ltw)])
+    # print('final:', [i.show() for i in ltw_to_dtw(ltw)])
     return ltw_to_dtw(ltw)
 
 
@@ -124,8 +141,16 @@ def isCounterexample(teacher, hypothesis, sample):
 
     # Evaluation of sample on the hypothesis, should be -1, 0, 1
     DRTWs, value = getHpyDTWsValue(sample, hypothesis)
-
-    return (realValue == 1 and value != 1) or (realValue != 1 and value == 1)
+    if realValue == -1:
+        if realValue == -1 and value == 1:
+            return True
+        else:
+            return False
+    elif (realValue == 1 and value != 1) or (realValue != 1 and value == 1):
+        return True
+    else:
+        return False
+    # return value == realValue
 
 
 def sampleGeneration(inputs, upperGuard, stateNum, length=None):
@@ -135,7 +160,7 @@ def sampleGeneration(inputs, upperGuard, stateNum, length=None):
         length = random.randint(1, stateNum)
     for i in range(length):
         input = inputs[random.randint(0, len(inputs) - 1)]
-        time = random.randint(0, upperGuard * 2 + 1)
+        time = random.randint(0, upperGuard * 3 + 1)
         if time % 2 == 0:
             time = time // 2
         else:
@@ -217,18 +242,24 @@ def sampleGeneration_valid(teacher, upperGuard, length):
 
     return dtw
 
+
 def sampleGeneration_invalid(teacher, upperGuard, length):
     assert length > 0
     sample_prefix = None
     while sample_prefix is None:
-        sample_prefix = sampleGeneration_valid(teacher, upperGuard, length-1)
+        # sample_prefix = sampleGeneration_valid(teacher, upperGuard, length-1)
+        sample_prefix = sampleGeneration_valid(teacher, upperGuard, length)
     action = random.choice(teacher.inputs)
-    time = random.randint(0, upperGuard * 2 + 1)
+    time = random.randint(0, upperGuard * 3 + 1)
     if time % 2 == 0:
         time = time // 2
     else:
         time = time // 2 + 0.1
-    return sample_prefix + [TimedWord(action, time)]
+    index = random.randint(0, len(sample_prefix) - 1)
+    sample_prefix[index] = TimedWord(action, time)
+    return sample_prefix
+    # return sample_prefix + [TimedWord(action, time)]
+
 
 def sampleGeneration2(teacher, upperGuard, length):
     if random.randint(0, 1) == 0:
@@ -243,7 +274,7 @@ def sampleGeneration2(teacher, upperGuard, length):
 def EQs(hypothesis, upperGuard, epsilon, delta, stateNum, targetSys, eqNum, testNum):
     testSum = int((math.log(1 / delta) + math.log(2) * (eqNum + 1)) / epsilon)
     # print(testNum)
-    for length in range(1, math.ceil(stateNum * 1.7)):
+    for length in range(1, math.ceil(stateNum * 1.5)):
         ctx = None
         correct = 0
         i = 0
@@ -262,7 +293,26 @@ def EQs(hypothesis, upperGuard, epsilon, delta, stateNum, targetSys, eqNum, test
 
         if ctx is not None:
             # print('init ctx:', [i.show() for i in ctx])
+
+            # print('--------------init---------------')
+            # print([i.show() for i in ctx])
+            # realDRTWs, realValue = testDTWs(ctx, targetSys)
+            # DRTWs, value = getHpyDTWsValue(ctx, hypothesis)
+            # print(realValue, value)
+            # tempCtx = copy.deepcopy(ctx)
+
             ctx = minimizeCounterexample(targetSys, hypothesis, ctx)
+
+            # print('--------------update---------------')
+            # print([i.show() for i in ctx])
+            # realDRTWs, realValue = testDTWs(ctx, targetSys)
+            # DRTWs, value = getHpyDTWsValue(ctx, hypothesis)
+            # if realValue == value:
+            #     print(realValue, value)
+            #     makePic.makeLearnedOTA(hypothesis, '', 'results/learnedSys')
+            #     makePic.makeOTA(targetSys, '', 'results/目标系统')
+            #     tempCtx = minimizeCounterexample(targetSys, hypothesis, tempCtx)
+            # print(realValue, value)
             realDRTWs, realValue = testDTWs(ctx, targetSys)
             return False, realDRTWs, testNum
     return True, None, testNum
