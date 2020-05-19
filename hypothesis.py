@@ -212,7 +212,7 @@ def structSimpleHypothesis(hypothesis):
     return OTA(inputs, states, trans, initState, acceptStates, sinkState)
 
 
-# --------------------------------- 辅助函数 ---------------------------------
+# --------------------------------- auxiliary function ---------------------------------
 
 # valueList改为str
 def makeStr(valueList):
@@ -224,7 +224,7 @@ def makeStr(valueList):
     return result
 
 
-# 判断两个LRTWs是否相同
+# Determine whether two LRTWs are the same
 def isEqual(LRTWs1, LRTWs2):
     if len(LRTWs1) != len(LRTWs2):
         return False
@@ -249,7 +249,7 @@ def isInt(num):
         return False
 
 
-# Guards排序
+# Sort guards
 def sortGuards(guards):
     for i in range(len(guards) - 1):
         for j in range(len(guards) - i - 1):
@@ -258,7 +258,7 @@ def sortGuards(guards):
     return guards
 
 
-# Guards合并
+# Merge guards
 def simpleGuards(guards):
     if len(guards) == 1 or len(guards) == 0:
         return guards

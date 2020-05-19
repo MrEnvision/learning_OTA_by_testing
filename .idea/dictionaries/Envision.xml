@@ -2,8 +2,22 @@
   <dictionary name="Envision">
     <words>
       <w>automata</w>
+      <w>delaytimedwords</w>
+      <w>distr</w>
       <w>drtw</w>
+      <w>findlocationbyname</w>
+      <w>initstate</w>
       <w>letterword</w>
+      <w>lname</w>
+      <w>lrtw</w>
+      <w>otatran</w>
+      <w>prelw</w>
+      <w>resettimedwords</w>
+      <w>statename</w>
+      <w>timedword</w>
+      <w>timedwords</w>
+      <w>timeword</w>
+      <w>whichstate</w>
     </words>
   </dictionary>
 </component>

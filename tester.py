@@ -2,7 +2,7 @@ from system import systemOutput, systemTest
 from timedWord import TimedWord, ResetTimedWord
 
 
-# logical-timed test，无效或sink即终止，并补全
+# logical-timed test -  input->LTWs，output->LRTWs，invalid or sink 则终止，并补全LRTWs
 def testLTWs(LTWs, targetSys):
     if not LTWs:
         if targetSys.initState in targetSys.acceptStates:
@@ -40,7 +40,7 @@ def testLTWs(LTWs, targetSys):
         return LRTWs, value
 
 
-# delay-timed test - 输入DTWs，返回DRTWs
+# delay-timed test - input->DTWs，output->DRTWs
 def testDTWs(DTWs, targetSys):
     DRTWs, value = systemTest(DTWs, targetSys)
     return DRTWs, value

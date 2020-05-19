@@ -27,7 +27,7 @@ class Element(object):
         self.valueList = valueList  # [value,[resetList]]
 
 
-# 初始化观察表
+# init observation table
 def initTable(inputs, targetSys, mqNum):
     table = ObsTable([], [], [])
     # 处理E
@@ -204,6 +204,7 @@ def dealCtx(table, ctx, targetSys, mqNum):
 
 # --------------------------------- 辅助函数 ---------------------------------
 
+# time normalization
 def normalize(trace):
     newTrace = []
     for i in trace:
@@ -215,7 +216,7 @@ def normalize(trace):
     return newTrace
 
 
-# LRTWs是否有效
+# determine whether LRTWs are valid （LRTWs是否有效）
 def isValid(LRTWs):
     if not LRTWs:
         return True
@@ -257,7 +258,7 @@ def elementNotInList(valueList, elementList):
             return False
 
 
-# pre是否是tws的前缀
+# determine whether pre is the prefix of tws （判断pre是否是tws的前缀）
 def isPrefix(tws, pre):
     if len(pre) == 0:
         return True
@@ -273,7 +274,7 @@ def isPrefix(tws, pre):
             return True
 
 
-# tws删除前缀pre
+# remove prefix pre （删除tws的前缀pre）
 def deletePrefix(tws, pre):
     if len(pre) == 0:
         return tws
@@ -282,7 +283,7 @@ def deletePrefix(tws, pre):
         return new_tws
 
 
-# tws的前缀集
+# prefix set of tws （tws前缀集）
 def prefixes(tws):
     newPrefixes = []
     for i in range(1, len(tws) + 1):

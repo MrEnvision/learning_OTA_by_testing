@@ -3,12 +3,6 @@ import timeInterval
 from timedWord import ResetTimedWord, TimedWord
 
 
-class TestResult(object):
-    def __init__(self, LRTWs, result):
-        self.LRTWs = LRTWs
-        self.result = result
-
-
 class System(object):
     def __init__(self, inputs, states, trans, initState, acceptStates):
         self.inputs = inputs
@@ -16,17 +10,6 @@ class System(object):
         self.trans = trans
         self.initState = initState
         self.acceptStates = acceptStates
-
-    def getInputsDic(self):
-        dic = {}
-        for state in self.states:
-            dic[state] = []
-        for state in self.states:
-            for tran in self.trans:
-                if tran.source == state:
-                    if tran.input not in dic[state]:
-                        dic[state].append(tran.input)
-        return dic
 
 
 class SysTran(object):
@@ -87,7 +70,7 @@ def buildSystem(jsonFile):
     return system
 
 
-# input -> DTWs，output -> DRTWs and value - delay-timed test
+# input -> DTWs，output -> DRTWs and value - for delay-timed test
 def systemTest(DTWs, targetSys):
     DRTWs = []
     value = []
@@ -124,7 +107,7 @@ def systemTest(DTWs, targetSys):
     return DRTWs, value
 
 
-# input -> DTW(single)，output -> curState and value - logical-timed test
+# input -> DTW(single)，output -> curState and value - for ogical-timed test
 def systemOutput(DTW, nowTime, curState, targetSys):
     value = None
     resetFlag = False
