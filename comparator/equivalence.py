@@ -1,5 +1,5 @@
-from exactEQs.interval import Constraint
-from exactEQs.ota import State, Timedword
+from comparator.interval import Constraint
+from comparator.ota import State, Timedword
 
 
 class Letter(object):

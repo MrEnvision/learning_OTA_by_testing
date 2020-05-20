@@ -1,7 +1,7 @@
 import copy
 import obsTable
 from teacher import EQs_new as EQs
-import exactEQs.equivWrapper as equivWrapper
+import comparator.equivWrapper as equivWrapper
 from hypothesis import structDiscreteOTA, structHypothesisOTA
 
 
@@ -77,6 +77,8 @@ def learnOTA(targetSys, inputs, upperGuard, epsilon, delta, stateNum, comparator
             if debugFlag:
                 print("***************** counterexample is as follow. *******************")
                 print([drtw.show() for drtw in ctx])
+            print("***************** counterexample is as follow. *******************")
+            print([drtw.show() for drtw in ctx])
             # deal with ctx
             table, mqNum = obsTable.dealCtx(table, ctx, targetSys, mqNum)
             tNum = tNum + 1

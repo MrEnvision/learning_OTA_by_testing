@@ -76,8 +76,8 @@ if __name__ == '__main__':
     random.seed(2)
 
     # # file directory
-    # filePath = "Automata/TCP"
-    filePath = sys.argv[1]
+    filePath = "Automata/TCP"
+    # filePath = sys.argv[1]
     # target model file
     modelFile = filePath + "/model.json"
     # prior information required for learning
@@ -89,6 +89,7 @@ if __name__ == '__main__':
     with open(filePath + "/result.json", 'w') as f:
         json.dump({}, f)
     for i in range(experimentNum):
+        print("Now experiment: ", i)
         result = main()
         with open(filePath + "/result.json", 'r') as jsonFile:
             data = json.load(jsonFile)

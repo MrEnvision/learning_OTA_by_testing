@@ -1,9 +1,9 @@
 import copy
 from tester import testDTWs
 from timedWord import TimedWord
-from exactEQs import equivalence
-from exactEQs import ota as old_ota
-from exactEQs import interval as old_interval
+from comparator import equivalence
+from comparator import ota as old_ota
+from comparator import interval as old_interval
 from system import buildSystem
 from hypothesis import OTA, OTATran
 import timeInterval as timeInterval
@@ -32,7 +32,7 @@ def hpyCompare(stableHpy, hypothesisOTA, upperGuard, targetSys, mqNum):
     res, w_pos = equivalence.ota_inclusion(int(max_time_value), sys, sys2)
     # dtw_pos is accepted by sys2 but not sys.
     if not res:
-        dtw_pos = equivalence.findDelayTimedwords(w_pos, 's', sys2.sigma)
+        dtw_pos = equivalence.findDelayTimedwords(w_pos, 'q', sys2.sigma)
         # print('res', dtw_pos)
 
     res2, w_neg = equivalence.ota_inclusion(int(max_time_value), sys2, sys)
@@ -188,7 +188,7 @@ if __name__ == "__main__":
     res, w_pos = equivalence.ota_inclusion(max_time_value, sys, sys2)
     # drtw_pos is accepted by sys2 but not sys.
     if not res:
-        dtw_pos = equivalence.findDelayTimedwords(w_pos, 's', sys2.sigma)
+        dtw_pos = equivalence.findDelayTimedwords(w_pos, 'q', sys2.sigma)
         print('res', dtw_pos)
 
     res2, w_pos2 = equivalence.ota_inclusion(max_time_value, sys2, sys)

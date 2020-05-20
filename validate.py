@@ -1,8 +1,8 @@
 import copy
 import random
 import math
-from exactEQs.equivWrapper import buildCanonicalOTA, transform_system
-from exactEQs.equivalence import equivalence_query_normal
+from comparator.equivWrapper import buildCanonicalOTA, transform_system
+from comparator.equivalence import equivalence_query_normal
 from sampling import sampleGenerationMain
 from teacher import getHpyDTWsValue
 from tester import testDTWs
