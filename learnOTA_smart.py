@@ -76,8 +76,8 @@ if __name__ == '__main__':
     random.seed(2)
 
     # # file directory
-    filePath = "Automata/TCP"
-    # filePath = sys.argv[1]
+    # filePath = "Automata/TCP"
+    filePath = sys.argv[1]
     # target model file
     modelFile = filePath + "/model.json"
     # prior information required for learning

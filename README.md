@@ -1,10 +1,10 @@
 # PAC Learning of DOTAs
 
-Last updated: 2020.05.17
+Last updated: 2020.05.22
 
 ## Overview
 
-This tool is dedicated to learning deterministic one-clock timed automata (DOTAs) which is a subclass of timed automata with only one clock. In contrast to the white-box learning tool given in [OTALearning](https://github.com/Leslieaj/OTALearning), we focus on the challenge of PAC learning of timed automata, which is a black box system. This tool for learning DOTAs under more realistic assumptions within the framework of PAC learning. Membership queries and equivalence queries are realized via testing. In addition, to speed up the learning process, we make several improvements to the basic PAC algorithm. This includes a special sampling method, the use of a comparator to reduce the number of equivalence queries, and the use of counterexample minimization.
+This tool is dedicated to learning deterministic one-clock timed automata (DOTAs) which is a subclass of timed automata with only one clock. In contrast to the white-box learning tool given in [OTALearning](https://github.com/Leslieaj/OTALearning), we focus on the challenge of PAC learning of timed automata, which is a black box system. This tool for learning DOTAs under more realistic assumptions within the framework of PAC learning. Membership queries and equivalence queries are realized via testing. In addition, to speed up the learning process, we make several improvements to the basic PAC algorithm. This includes a special sampling method, the use of a comparator to reduce the number of equivalence queries, and the use of counterexample minimization. We provide two kinds of teachers for learning, smart teacher and normal teacher. The main difference is that the normal learner now needs to *guess* the reset information on transitions discovered in the observation table. Due to these guesses, the normal learning algorithm features exponential complexity in the size of the learned automata.
 
 ## Installation
 
@@ -15,12 +15,18 @@ The project was developed using Python3, and you only need to download the proje
 
 ## Usage
 
-### 1. smart teacher setting:
-
 If you have prepared files `model.json` and `precondition.json` in path `Automata/TCP`, you can directly run: 
+
+- smart teacher setting:
 
 ```shell
 $python3 learnOTA_smart.py Automata/TCP
+```
+
+- normal teacher setting:
+
+```shell
+$python3 learnOTA_normal.py Automata/TCP
 ```
 
 1. `learnOTA_smart.py` is the main file of the program.
@@ -81,9 +87,13 @@ $python3 learnOTA_smart.py Automata/TCP
 
 ## Output
 
-### 1. smart teacher setting:
+### 1. Smart teacher setting:
 
 If we learn the target DOTA successfully, the final COTA will be drawn and displayed as a PDF file. Additionally, we will count the total learning time, the number of tests, the number of equivalence query, and the number of membership query, etc. All results will be stored in a folder named `results` and a file named `result.json`.
+
+### 2. Normal teacher setting:
+
+If we learn the target DOTA successfully, we will count the total learning time, total number of tables explored, the number of equivalence query, and the number of membership query, etc.  Additionally, we will store the model information in file  `result.json`.
 
 ## License
 
