@@ -107,7 +107,7 @@ def systemTest(DTWs, targetSys):
     return DRTWs, value
 
 
-# input -> DTW(single)，output -> curState and value - for ogical-timed test
+# input -> DTW(single)，output -> curState and value - for logical-timed test
 def systemOutput(DTW, nowTime, curState, targetSys):
     value = None
     resetFlag = False

@@ -30,17 +30,17 @@ class Element(object):
 # init observation table
 def initTable(inputs, targetSys, mqNum):
     table = ObsTable([], [], [])
-    # 处理E
+    # deal with E
     table.E.append([])
-    # 处理S
+    # deal with S
     element, mqNum = fillTableRow([], table, False, targetSys, mqNum)
     table.S.append(element)
-    # 处理R
+    # deal with R
     table, mqNum = extendR(table.S[0], inputs, table, targetSys, mqNum)
     return table, mqNum
 
 
-# 根据s扩充成一行
+# Expand into a row according to s (根据s扩充成一行)
 def fillTableRow(LRTWs, table, flag, targetSys, mqNum):
     # flag判断是否进入Error状态或查询是否有效 - flag为True表示已进入Error状态或无效
     if flag:
@@ -69,7 +69,7 @@ def fillTableRow(LRTWs, table, flag, targetSys, mqNum):
     return element, mqNum
 
 
-# S添加s,扩展R区域
+# S adds s and table expands R area (S添加s,扩展R区域)
 def extendR(s, inputs, table, targetSys, mqNum):
     tableTrace = [s.LRTWs for s in table.S] + [r.LRTWs for r in table.R]
     for input in inputs:
@@ -84,7 +84,7 @@ def extendR(s, inputs, table, targetSys, mqNum):
     return table, mqNum
 
 
-# 观察表是否满足全部性质
+# Determine whether table is prepared
 def isPrepared(table):
     flagClosed, closedMove = isClosed(table)
     flagConsistent, consistentAdd = isConsistent(table)
@@ -94,7 +94,7 @@ def isPrepared(table):
         return False
 
 
-# 是否closed
+# Determine whether it is closed
 def isClosed(table):
     closedMove = []
     for r in table.R:
@@ -112,7 +112,7 @@ def isClosed(table):
         return True, closedMove
 
 
-# 调整至closed
+# make closed
 def makeClosed(table, inputs, closedMove, targetSys, mqNum):
     # close_move将其从R移至S
     for r in closedMove:
@@ -124,7 +124,7 @@ def makeClosed(table, inputs, closedMove, targetSys, mqNum):
     return table, mqNum
 
 
-# 是否consistent
+# Determine whether it is consistent
 def isConsistent(table):
     flag = True
     consistentAdd = []
@@ -160,7 +160,7 @@ def isConsistent(table):
     return flag, consistentAdd
 
 
-# 调整至consistent
+# make consistent
 def makeConsistent(table, consistentAdd, targetSys, mqNum):
     table.E.append(consistentAdd)
     for i in range(0, len(table.S)):
@@ -184,7 +184,7 @@ def makeConsistent(table, consistentAdd, targetSys, mqNum):
     return table, mqNum
 
 
-# 处理反例 - 添加反例的所有前缀集
+# deal with ctx (添加反例的所有前缀集)
 def dealCtx(table, ctx, targetSys, mqNum):
     newCtx = DRTW_to_LRTW(ctx)
     newCtx = normalize(newCtx)
@@ -233,7 +233,7 @@ def isValid(LRTWs):
         return True
 
 
-# 获得E中对应的resetList
+# get corresponding resetList in e (获得E中对应的resetList)
 def getResetList(LRTWs, e):
     restList = []
     tempLRTWs = LRTWs[-len(e):]
