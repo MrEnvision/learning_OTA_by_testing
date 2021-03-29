@@ -1,6 +1,6 @@
 # PAC Learning of DOTAs
 
-Last updated: 2020.05.22
+Last updated: 2020.05.22  —— new version: [pac_learn_DOTAs](https://github.com/MrEnvision/pac_learn_DOTAs)
 
 ## Overview
 
